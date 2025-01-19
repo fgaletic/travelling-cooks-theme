@@ -18,16 +18,18 @@ mix.postCss("resources/css/app.css", "css");
 
 mix.postCss("resources/css/editor-style.css", "css");
 
-// mix.browserSync({
-//     proxy: 'http://tailpress.test',
-//     host: 'tailpress.test',
-//     open: 'external',
-//     port: 8000
-//     injectChanges: true
-// });
+mix.browserSync({
+    proxy: 'http://travellingcooks.local/',
+    host: 'travellingcooks.local',
+    open: 'external',
+    port: 8000,
+    injectChanges: true
+});
 
 if (mix.inProduction()) {
     mix.version();
 } else {
     mix.options({ manifest: false });
 }
+
+mix.disableSuccessNotifications();

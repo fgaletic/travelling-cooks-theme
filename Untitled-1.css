@@ -1,0 +1,2632 @@
+/* I want to create a design for a simple lifestyle blog about travel and cooking called Travelling Cooks, using the red orange and white templates, there should be header, hero, blog previews, newsletter signup and footer. There will be a homepage template, a blog template, about us, contact us form page.
+ */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 48px;
+isolation: isolate;
+
+position: relative;
+width: 1440px;
+height: 2598px;
+min-height: 900px;
+
+background: #FCFCFC;
+
+
+/* local business Nav Bar */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 24px 0px 16px;
+gap: 24px;
+isolation: isolate;
+
+width: 1344px;
+height: 72px;
+
+background: #FCFCFC;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+z-index: 2;
+
+
+/* heading */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 0px;
+gap: 8px;
+
+width: 1344px;
+height: 32px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+z-index: 0;
+
+
+/* logo */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 6px;
+
+margin: 0 auto;
+width: 231.13px;
+height: 32px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+width: 27.13px;
+height: 27.2px;
+
+background: #D93B00;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Travelling Cooks */
+
+width: 198px;
+height: 18px;
+
+font-family: 'Sen';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 100%;
+/* or 28px */
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+letter-spacing: -0.04em;
+text-transform: lowercase;
+
+color: #D93B00;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* pageLinks */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+align-items: flex-start;
+padding: 0px;
+gap: 48px;
+
+margin: 0 auto;
+width: 518px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Home */
+
+width: 49px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height, or 111% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Blog */
+
+width: 36px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height, or 111% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* About Us */
+
+width: 74px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height, or 111% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Contact Us */
+
+width: 89px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height, or 111% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* Subscribe */
+
+width: 78px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height, or 111% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+flex-grow: 0;
+
+
+/* divider */
+
+position: absolute;
+height: 0px;
+left: -96px;
+right: -96px;
+bottom: 0px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+z-index: 1;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 48px 0px;
+isolation: isolate;
+
+width: 1344px;
+height: 2274px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+z-index: 1;
+
+
+/* Main Content */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+isolation: isolate;
+
+width: 1344px;
+height: 2178px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+z-index: 0;
+
+
+/* Landing Page Hero With Tagline and Cutout Image */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px 0px 48px;
+
+width: 1344px;
+height: 976px;
+
+background: #FCFCFC;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+z-index: 2;
+
+
+/* content */
+
+width: 1344px;
+height: 928px;
+
+background: #FCFCFC;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* bg */
+
+position: absolute;
+left: -96.5px;
+right: -95.5px;
+top: 0px;
+bottom: 0px;
+
+background: linear-gradient(171.51deg, rgba(252, 252, 252, 0.7) 41.14%, rgba(173, 47, 0, 0.112) 141.61%);
+
+
+/* textDiv */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 224px 0px;
+
+position: absolute;
+width: 704px;
+height: 1008px;
+left: 0px;
+top: 0px;
+
+
+
+/* textContent */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 48px;
+
+width: 704px;
+height: 560px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* Exploring the World, One Dish at a Time */
+
+width: 775px;
+height: 480px;
+
+font-family: 'Domine';
+font-style: normal;
+font-weight: 700;
+font-size: 120px;
+line-height: 120px;
+/* or 100% */
+letter-spacing: -0.02em;
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* div */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+width: 704px;
+height: 32px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Join us on a journey of culinary and travel adventures. */
+
+width: 632px;
+height: 32px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height, or 133% */
+
+color: #281E1B;
+
+opacity: 0.51;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* spacer */
+
+width: 72px;
+height: 32px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* imageDiv */
+
+position: absolute;
+width: 800px;
+height: 928px;
+left: 640px;
+top: 0px;
+
+
+
+/* A portrait of a confident woman aged 50 or older, with short gray hair styled elegantly, wearing a stylish chef's apron. She is standing in a bright, modern kitchen filled with fresh ingredients, colorful vegetables, and cooking utensils. The kitchen is well-lit, creating a warm and inviting atmosphere. The background is softly blurred to emphasize her cheerful expression and the vibrant colors of the kitchen, ensuring the image is well-composed and not awkwardly cropped. */
+
+position: absolute;
+width: 1028px;
+height: 1028px;
+left: 0px;
+top: calc(50% - 1028px/2 + 50px);
+
+background: url(A portrait of a confident woman aged 50 or older, with short gray hair styled elegantly, wearing a stylish chef's apron. She is standing in a bright, modern kitchen filled with fresh ingredients, colorful vegetables, and cooking utensils. The kitchen is well-lit, creating a warm and inviting atmosphere. The background is softly blurred to emphasize her cheerful expression and the vibrant colors of the kitchen, ensuring the image is well-composed and not awkwardly cropped..png);
+mix-blend-mode: normal;
+
+
+/* divider */
+
+position: absolute;
+height: 0px;
+left: -96px;
+right: -96px;
+bottom: 0px;
+
+
+
+/* 4x2 Article Card Grid */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 32px 0px;
+gap: 16px;
+
+width: 1344px;
+height: 778px;
+
+background: #FCFCFC;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+z-index: 1;
+
+
+/* divider */
+
+width: 1344px;
+height: 0px;
+
+border: 1.5px solid rgba(110, 83, 73, 0.2);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: baseline;
+padding: 0px;
+gap: 16px;
+
+width: 1344px;
+height: 32px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Latest Blog Posts */
+
+width: 1281px;
+height: 32px;
+
+font-family: 'Domine';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 32px;
+/* identical to box height, or 114% */
+letter-spacing: -0.02em;
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* Link */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 4px;
+
+width: 63px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* See all */
+
+width: 43px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: #D93B00;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* arrow-right */
+
+width: 16px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Icon */
+
+position: absolute;
+left: 20.83%;
+right: 20.83%;
+top: 20.83%;
+bottom: 20.83%;
+
+border: 1.5px solid #281E1B;
+
+
+/* articles */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px 0px 16px;
+gap: 24px;
+
+width: 1344px;
+height: 325px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Article List Item{-style}[fixed] */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+width: 318px;
+height: 309px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* A bustling Bangkok street market with vibrant food stalls showcasing local dishes like pad thai and mango sticky rice. */
+
+box-sizing: border-box;
+
+width: 318px;
+height: 225px;
+
+background: url(A bustling Bangkok street market with vibrant food stalls showcasing local dishes like pad thai and mango sticky rice.);
+mix-blend-mode: normal;
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 318px;
+height: 72px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Exploring the Street Foods of Bangkok */
+
+width: 318px;
+height: 24px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 600;
+font-size: 17px;
+line-height: 24px;
+/* identical to box height, or 141% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Travel, Food */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: #D93B00;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* October 5, 2023 */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Article List Item{-style} */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+width: 318px;
+height: 309px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 1;
+
+
+/* A wooden table with freshly made pasta noodles and scattered flour next to a rolling pin. */
+
+box-sizing: border-box;
+
+width: 318px;
+height: 225px;
+
+background: url(A wooden table with freshly made pasta noodles and scattered flour next to a rolling pin.);
+mix-blend-mode: normal;
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 318px;
+height: 72px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Homemade Pasta: A Step-by-Step Guide */
+
+width: 318px;
+height: 24px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 600;
+font-size: 17px;
+line-height: 24px;
+/* identical to box height, or 141% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Recipe, Italian */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: #D93B00;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* September 28, 2023 */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Article List Item{-style} */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+width: 318px;
+height: 309px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 1;
+
+
+/* A group of hikers traversing a rugged mountain trail in a picturesque Patagonian landscape with snow-capped peaks and lush greenery. */
+
+box-sizing: border-box;
+
+width: 318px;
+height: 225px;
+
+background: url(A group of hikers traversing a rugged mountain trail in a picturesque Patagonian landscape with snow-capped peaks and lush greenery.);
+mix-blend-mode: normal;
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 318px;
+height: 72px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Hiking the Trails of Patagonia */
+
+width: 318px;
+height: 24px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 600;
+font-size: 17px;
+line-height: 24px;
+/* identical to box height, or 141% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Travel, Adventure */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: #D93B00;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* September 20, 2023 */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Article List Item{-style} */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+width: 318px;
+height: 309px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 1;
+
+
+/* A rich chocolate lava cake with a molten center on a decorative plate surrounded by chocolate shavings and a drizzle of chocolate sauce. */
+
+box-sizing: border-box;
+
+width: 318px;
+height: 225px;
+
+background: url(A rich chocolate lava cake with a molten center on a decorative plate surrounded by chocolate shavings and a drizzle of chocolate sauce.);
+mix-blend-mode: normal;
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 318px;
+height: 72px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Decadent Chocolate Lava Cake */
+
+width: 318px;
+height: 24px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 600;
+font-size: 17px;
+line-height: 24px;
+/* identical to box height, or 141% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Recipe, Dessert */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: #D93B00;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* September 15, 2023 */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* articles */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 24px;
+
+width: 1344px;
+height: 309px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Article List Item{-style} */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+width: 318px;
+height: 309px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* A traditional wooden Japanese temple with curved, tiled roofs surrounded by vibrant green trees and a clear blue sky. */
+
+box-sizing: border-box;
+
+width: 318px;
+height: 225px;
+
+background: url(A traditional wooden Japanese temple with curved, tiled roofs surrounded by vibrant green trees and a clear blue sky.);
+mix-blend-mode: normal;
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 318px;
+height: 72px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* A Cultural Tour of Kyoto */
+
+width: 318px;
+height: 24px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 600;
+font-size: 17px;
+line-height: 24px;
+/* identical to box height, or 141% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Travel, Culture */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: #D93B00;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* September 10, 2023 */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Article List Item{-style} */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+width: 318px;
+height: 309px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 1;
+
+
+/* A plate of vibrant vegan tacos filled with fresh vegetables and topped with creamy avocado sauce. */
+
+box-sizing: border-box;
+
+width: 318px;
+height: 225px;
+
+background: url(A plate of vibrant vegan tacos filled with fresh vegetables and topped with creamy avocado sauce.);
+mix-blend-mode: normal;
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 318px;
+height: 72px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Vegan Tacos with Avocado Cream */
+
+width: 318px;
+height: 24px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 600;
+font-size: 17px;
+line-height: 24px;
+/* identical to box height, or 141% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Recipe, Vegan */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: #D93B00;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* September 5, 2023 */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Article List Item{-style} */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+width: 318px;
+height: 309px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 1;
+
+
+/* A breathtaking view of the Northern Lights illuminating the night sky over a tranquil snowy landscape. */
+
+box-sizing: border-box;
+
+width: 318px;
+height: 225px;
+
+background: url(A breathtaking view of the Northern Lights illuminating the night sky over a tranquil snowy landscape.);
+mix-blend-mode: normal;
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 318px;
+height: 72px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Capturing the Northern Lights */
+
+width: 318px;
+height: 24px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 600;
+font-size: 17px;
+line-height: 24px;
+/* identical to box height, or 141% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Travel, Photography */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: #D93B00;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* August 30, 2023 */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Article List Item{-style} */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+width: 318px;
+height: 309px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 1;
+
+
+/* A colorful bowl filled with fresh fruits, granola, and seeds surrounded by green foliage on a rustic wooden table. */
+
+box-sizing: border-box;
+
+width: 318px;
+height: 225px;
+
+background: url(A colorful bowl filled with fresh fruits, granola, and seeds surrounded by green foliage on a rustic wooden table.);
+mix-blend-mode: normal;
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 318px;
+height: 72px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Healthy Smoothie Bowls */
+
+width: 318px;
+height: 24px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 600;
+font-size: 17px;
+line-height: 24px;
+/* identical to box height, or 141% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Recipe, Breakfast */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: #D93B00;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* August 25, 2023 */
+
+width: 318px;
+height: 16px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Event Landing Page Footer */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 96px 0px;
+gap: 48px;
+
+width: 1344px;
+height: 424px;
+
+background: #FCFCFC;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+z-index: 0;
+
+
+/* Subscribe to Our Newsletter */
+
+width: 454px;
+max-width: 720px;
+height: 40px;
+
+font-family: 'Domine';
+font-style: normal;
+font-weight: 700;
+font-size: 34px;
+line-height: 40px;
+/* identical to box height, or 118% */
+text-align: center;
+letter-spacing: -0.02em;
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Input Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+width: 600px;
+height: 48px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* inputStandard */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 8px 16px;
+gap: 8px;
+
+width: 453px;
+height: 48px;
+
+background: rgba(126, 61, 37, 0.09);
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Enter your email */
+
+width: 421px;
+height: 24px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height, or 120% */
+
+color: rgba(46, 27, 20, 0.4);
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* buttonLarge */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 24px;
+
+width: 135px;
+height: 48px;
+
+background: #FF4500;
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Subscribe */
+
+width: 87px;
+height: 24px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height, or 120% */
+
+color: #050100;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* socials */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 32px;
+
+width: 208px;
+height: 48px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* facebook */
+
+width: 48px;
+height: 48px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 10.94%;
+right: 10.94%;
+top: 10.94%;
+bottom: 10.94%;
+
+background: #281E1B;
+
+
+/* instagram */
+
+width: 48px;
+height: 48px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 5.4%;
+right: 5.38%;
+top: 5.37%;
+bottom: 5.4%;
+
+background: #281E1B;
+
+
+/* twitter */
+
+width: 48px;
+height: 48px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 13.33%;
+right: 13.33%;
+top: 13.33%;
+bottom: 13.28%;
+
+background: #281E1B;
+
+
+/* Store Footer */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 48px 0px;
+gap: 16px;
+
+width: 1344px;
+height: 252px;
+
+background: #FCFCFC;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+z-index: 0;
+
+
+/* Container */
+
+width: 1344px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* divider */
+
+position: absolute;
+height: 0px;
+left: -96px;
+right: -96px;
+top: calc(50% - 0px/2);
+
+
+
+/* pageLinks */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 48px;
+
+width: 1344px;
+height: 132px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* logos */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+width: 400px;
+height: 68px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* logo */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 6px;
+
+width: 231.13px;
+height: 32px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+width: 27.13px;
+height: 27.2px;
+
+background: #D93B00;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Travelling Cooks */
+
+width: 198px;
+height: 18px;
+
+font-family: 'Sen';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 100%;
+/* or 28px */
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+letter-spacing: -0.04em;
+text-transform: lowercase;
+
+color: #D93B00;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* socials */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+width: 96px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* facebook */
+
+width: 24px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 10.94%;
+right: 10.93%;
+top: 10.94%;
+bottom: 10.94%;
+
+background: rgba(46, 27, 20, 0.62);
+
+
+/* instagram */
+
+width: 24px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 5.4%;
+right: 5.37%;
+top: 5.37%;
+bottom: 5.4%;
+
+background: rgba(46, 27, 20, 0.62);
+
+
+/* twitter */
+
+width: 24px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 13.33%;
+right: 13.33%;
+top: 13.33%;
+bottom: 13.28%;
+
+background: rgba(46, 27, 20, 0.62);
+
+
+/* footerLinkColumn */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 200px;
+height: 132px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Quick Links */
+
+width: 200px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Home */
+
+width: 200px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Blog */
+
+width: 200px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* About Us */
+
+width: 200px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Contact Us */
+
+width: 200px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* label */
+
+display: none;
+width: 200px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* footerLinkColumn */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 200px;
+height: 132px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Follow Us */
+
+width: 200px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Instagram */
+
+width: 200px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Facebook */
+
+width: 200px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Twitter */
+
+width: 200px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Pinterest */
+
+width: 200px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* label */
+
+display: none;
+width: 200px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: rgba(46, 27, 20, 0.62);
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* newsletter */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 0px;
+gap: 16px;
+
+width: 400px;
+height: 96px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 4px;
+
+width: 400px;
+height: 44px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Travelling Cooks */
+
+width: 112px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Stay updated with our latest travel and cooking adventures. */
+
+width: 400px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+width: 400px;
+height: 36px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* inputStandard */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 8px 12px;
+gap: 8px;
+
+width: 291px;
+height: 36px;
+
+background: rgba(126, 61, 37, 0.09);
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* Email address */
+
+width: 267px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: rgba(46, 27, 20, 0.4);
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+
+/* buttonOutlinedStandard */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px 16px;
+
+width: 97px;
+height: 36px;
+
+border: 1.5px solid rgba(110, 83, 73, 0.2);
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Subscribe */
+
+width: 65px;
+height: 20px;
+
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 20px;
+/* identical to box height, or 133% */
+
+color: #281E1B;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;

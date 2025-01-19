@@ -1,21 +1,16 @@
-article > *:not(.entry-content),
-.entry-content > * {
-    @apply mx-auto max-w-content;
-}
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&family=Outfit:wght@400;500;700&family=Domine:wght@400;700&display=swap');
 
+/* Typography and Link Styling */
 .entry-content, .block-editor-block-list__layout {
-    h1 {
+    h1, .hero-section h1 {
         @apply text-2xl;
     }
-
     h2 {
         @apply text-xl;
     }
-
     h3 {
         @apply text-lg;
     }
-
     p, ul, ol {
         a {
             @apply text-blue-500 underline;
@@ -24,19 +19,42 @@ article > *:not(.entry-content),
                 @apply no-underline;
             }
         }
-
         @apply mb-8;
     }
-
-    ul:not(.block-editor-block-variation-picker__variations) {
-        li {
-            @apply list-disc list-inside;
-        }
+    ul:not(.block-editor-block-variation-picker__variations) li,
+    ol li {
+        @apply list-inside;
     }
-
-    ol {
-        li {
-            @apply list-decimal list-inside;
-        }
+    ul li {
+        @apply list-disc;
     }
+    ol li {
+        @apply list-decimal;
+    }
+}
+
+/* Hero Section */
+.hero-section h1 {
+    @apply text-5xl font-bold font-domine text-gray-800;
+}
+
+.hero-section p {
+    @apply text-lg font-outfit text-gray-500 opacity-70;
+}
+
+/* Blog Previews */
+.blog-preview article {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+}
+
+.blog-preview img {
+    @apply w-full h-48 object-cover rounded-t-lg;
+}
+
+.blog-preview h3 {
+    @apply text-lg font-bold font-outfit mt-2;
+}
+
+.blog-preview p {
+    @apply text-sm text-gray-500 mt-1;
 }

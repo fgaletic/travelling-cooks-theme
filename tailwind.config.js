@@ -19,8 +19,24 @@ module.exports = {
             },
         },
         extend: {
-            colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
-            fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme))
+            colors: {
+                ...tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)), // Keep TailPress colors
+                redOrange: '#D93B00', // Main red-orange for highlights
+                lightWhite: '#FCFCFC', // Light white background
+                darkGray: '#281E1B', // Dark gray for primary text
+                mutedGray: '#6E5349', // Muted gray for secondary elements
+            },
+            fontFamily: {
+                sen: ['Sen', 'sans-serif'], // For headings
+                outfit: ['Outfit', 'sans-serif'], // For navigation
+                domine: ['Domine', 'serif'], // For hero titles
+            },
+            borderRadius: {
+                lg: '8px', // Rounded images and cards
+            },
+            fontSize: {
+                ...tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme)) // Keep TailPress font sizes
+            }
         },
         screens: {
             'xs': '480px',
