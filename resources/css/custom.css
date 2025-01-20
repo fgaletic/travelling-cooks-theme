@@ -1,60 +1,130 @@
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&family=Outfit:wght@400;500;700&family=Domine:wght@400;700&display=swap');
 
-/* Typography and Link Styling */
-.entry-content, .block-editor-block-list__layout {
-    h1, .hero-section h1 {
-        @apply text-2xl;
-    }
-    h2 {
-        @apply text-xl;
-    }
-    h3 {
-        @apply text-lg;
-    }
-    p, ul, ol {
-        a {
-            @apply text-blue-500 underline;
+html, body {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
 
-            &:hover {
-                @apply no-underline;
-            }
-        }
-        @apply mb-8;
+/* Header Styling */
+header {
+    @apply flex justify-between items-center px-6 py-4;
+}
+
+header a {
+    @apply flex items-center gap-2;
+}
+
+header nav {
+    @apply flex space-x-8 text-lg font-outfit;
+}
+
+.header-container {
+    @apply px-6 py-4 w-full h-[10vh]; /* Consolidated styles */
+}
+
+@media (max-width: 960px) {
+    .header-container {
+        @apply px-4; /* Adjust for smaller screens */
     }
-    ul:not(.block-editor-block-variation-picker__variations) li,
-    ol li {
-        @apply list-inside;
-    }
-    ul li {
-        @apply list-disc;
-    }
-    ol li {
-        @apply list-decimal;
-    }
+}
+
+/* Typography and Link Styling */
+.entry-content h1, .hero-section h1 {
+    @apply text-2xl font-domine font-bold;
+}
+
+.entry-content h2 {
+    @apply text-xl font-outfit font-bold;
+}
+
+.entry-content p {
+    @apply mb-8;
 }
 
 /* Hero Section */
+.hero-section {
+    @apply relative bg-gradient-to-r from-orange-50 to-white px-6 py-12;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
 .hero-section h1 {
-    @apply text-5xl font-bold font-domine text-gray-800;
+    @apply max-w-full w-full font-domine font-bold text-[72px] md:text-[96px] leading-[78px] md:leading-[96px] tracking-tight text-darkGray;
+    margin: 0 auto;
+    margin-left: 1rem;
+    position: relative;
+    z-index: 10; /* Ensure it is above the image */
 }
 
 .hero-section p {
-    @apply text-lg font-outfit text-gray-500 opacity-70;
+    @apply text-lg sm:text-base font-outfit text-gray-700 opacity-70 mt-4 max-w-[600px];
+    margin-left: 1rem;
+    position: relative;
+    z-index: 10; /* Ensure it is above the image */
+}
+
+.hero-section img {
+    @apply absolute top-0 right-0 h-full w-auto object-cover;
+    z-index: 1; /* Place the image behind the text */
+    opacity: 0.9; /* Slightly transparent for readability */
+    @media (max-width: 700px) {
+        @apply opacity-50; /* Extra transparency on smaller screens */
+    }
 }
 
 /* Blog Previews */
+.blog-preview {
+    @apply grid gap-6 mt-8;
+}
+
+@media (min-width: 640px) {
+    .blog-preview {
+        @apply sm:grid-cols-2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .blog-preview {
+        @apply lg:grid-cols-3;
+    }
+}
+
 .blog-preview article {
-    @apply bg-white rounded-lg shadow-md overflow-hidden;
+    @apply bg-white rounded-lg shadow-md overflow-hidden p-4;
 }
 
 .blog-preview img {
     @apply w-full h-48 object-cover rounded-t-lg;
 }
 
-.blog-preview h3 {
-    @apply text-lg font-bold font-outfit mt-2;
+.blog-preview article:hover {
+    @apply shadow-lg transform scale-105 transition-all;
 }
 
-.blog-preview p {
-    @apply text-sm text-gray-500 mt-1;
+/* Footer Styling */
+footer {
+    @apply bg-lightWhite py-12;
+}
+
+footer a {
+    @apply font-outfit text-gray-600 hover:text-redOrange;
+}
+
+footer h4 {
+    @apply text-lg font-outfit mb-4;
+}
+
+footer form {
+    @apply flex flex-col gap-4;
+}
+
+footer input {
+    @apply p-3 border border-gray-300 rounded-lg font-outfit focus:outline-none focus:ring-2 focus:ring-orange-300;
+}
+
+footer button {
+    @apply bg-redOrange text-white font-outfit py-2 px-4 rounded-lg hover:bg-orange-600;
 }

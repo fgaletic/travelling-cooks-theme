@@ -109,3 +109,23 @@ function tailpress_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 }
 
 add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
+
+function enqueue_jquery() {
+    // Ensure jQuery is loaded
+    wp_enqueue_script('jquery');
+}
+add_action('wp_enqueue_scripts', 'enqueue_jquery');
+
+add_action('get_header', function() {
+    if (is_user_logged_in()) {
+        remove_action('wp_head', '_admin_bar_bump_cb');
+    }
+});
+
+function disable_avada_assets() {
+    // Disable Avada styles and scripts
+    wp_dequeue_style('fusion-dynamic-css');
+    wp_dequeue_script('avada-scripts');
+    wp_dequeue_script('fusion-scripts');
+}
+add_action('wp_enqueue_scripts', 'disable_avada_assets', 20);
