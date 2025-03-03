@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&family=Outfit:wght@400;500;700&family=Domine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Satisfy&display=swap');
 
 html, body {
     max-width: 100%;
@@ -16,7 +16,7 @@ header a {
 }
 
 header nav {
-    @apply flex space-x-8 text-lg font-outfit;
+    @apply flex space-x-8 text-lg font-montserrat;
 }
 
 .header-container {
@@ -31,11 +31,11 @@ header nav {
 
 /* Typography and Link Styling */
 .entry-content h1, .hero-section h1 {
-    @apply text-2xl font-domine font-bold;
+    @apply text-2xl font-recoleta font-bold;
 }
 
 .entry-content h2 {
-    @apply text-xl font-outfit font-bold;
+    @apply text-xl font-recoleta font-bold;
 }
 
 .entry-content p {
@@ -52,7 +52,7 @@ header nav {
 }
 
 .hero-section h1 {
-    @apply max-w-full w-full font-domine font-bold text-[72px] md:text-[96px] leading-[78px] md:leading-[96px] tracking-tight text-darkGray;
+    @apply max-w-full w-full font-recoleta font-bold text-[72px] md:text-[96px] leading-[78px] md:leading-[96px] tracking-tight text-darkBrown;
     margin: 0 auto;
     margin-left: 1rem;
     position: relative;
@@ -60,7 +60,7 @@ header nav {
 }
 
 .hero-section p {
-    @apply text-lg sm:text-base font-outfit text-gray-700 opacity-70 mt-4 max-w-[600px];
+    @apply text-lg sm:text-base font-recoleta text-gray-700 opacity-70 mt-4 max-w-[600px];
     margin-left: 1rem;
     position: relative;
     z-index: 10; /* Ensure it is above the image */
@@ -106,15 +106,15 @@ header nav {
 
 /* Footer Styling */
 footer {
-    @apply bg-lightWhite py-12;
+    @apply bg-offWhite py-12;
 }
 
 footer a {
-    @apply font-outfit text-gray-600 hover:text-redOrange;
+    @apply font-montserrat text-gray-600 hover:text-mutedPink;
 }
 
 footer h4 {
-    @apply text-lg font-outfit mb-4;
+    @apply text-lg font-montserrat mb-4;
 }
 
 footer form {
@@ -122,9 +122,9 @@ footer form {
 }
 
 footer input {
-    @apply p-3 border border-gray-300 rounded-lg font-outfit focus:outline-none focus:ring-2 focus:ring-orange-300;
+    @apply p-3 border border-gray-300 rounded-lg font-montserrat focus:outline-none focus:ring-2 focus:ring-orange-300;
 }
 
 footer button {
-    @apply bg-redOrange text-white font-outfit py-2 px-4 rounded-lg hover:bg-orange-600;
+    @apply bg-mutedPink text-white font-montserrat py-2 px-4 rounded-lg hover:bg-orange-600;
 }

@@ -1,116 +1,63 @@
 <?php get_header(); ?>
 
-<section class="hero-section bg-gradient-to-r from-orange-50 to-white px-6 py-12">
-    <div class="max-w-screen-xl mx-auto grid md:grid-cols-2 items-center">
-        <!-- Text Content -->
-        <div>
-            <h1 class="text-[120px] md:text-[96px] sm:text-[72px] leading-[120px] md:leading-[96px] sm:leading-[72px] font-bold tracking-tight text-darkGray max-w-[775px]">
-                Exploring the World, <br> One Dish at a Time
-            </h1>
-            <p class="text-lg sm:text-base font-outfit text-gray-700 opacity-70 mt-4 max-w-[600px]">
-                Join us on a journey of culinary and travel adventures.
-            </p>
-        </div>
-
-        <!-- Image -->
-        <div class="flex">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero_image.svg" alt="Hero Image" class="h-auto w-full object-cover">
-        </div>
+<section class="intro-section bg-offWhite px-6 py-12 text-center">
+    <div class="max-w-screen-md mx-auto">
+        <h1 class="text-[64px] md:text-[48px] sm:text-[36px] font-recoleta text-darkBrown">
+            Travelling Cooks
+        </h1>
+        <p class="text-lg sm:text-base font-montserrat text-darkBrown mt-4">
+            Welcome to my world of travel and food, where I navigate this exciting chapter of my life in my fabulous 50ish ++
+        </p>
     </div>
 </section>
 
 <section class="latest-posts px-6 py-12">
     <div class="flex justify-between items-center">
-        <h2 class="text-2xl font-bold font-domine">Latest Blog Posts</h2>
-        <a href="<?php echo home_url('/blog'); ?>" class="text-orange-500 hover:underline">See all</a>
+        <h2 class="text-2xl text-slateGray font-bold font-recoleta">This Month's Featured Posts</h2>
     </div>
     <div class="blog-preview grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        <?php
-        // Commenting out the dynamic WordPress query for now
-        /*
-        $latest_posts = new WP_Query(array('posts_per_page' => 6));
-        while ($latest_posts->have_posts()) : $latest_posts->the_post();
-        ?>
-        <article>
-            <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail('medium'); ?>
-                <div>
-                    <p><?php the_category(', '); ?></p>
-                    <h3><?php the_title(); ?></h3>
-                    <p><?php the_date(); ?></p>
-                </div>
-            </a>
-        </article>
-        <?php endwhile; wp_reset_query(); 
-        */
-        ?>
-
-        <!-- Hardcoded blog preview articles -->
         <article>
             <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Articles/PNG/northern-lights.png" alt="Northern Lights" class="w-full h-48 object-cover">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Articles/ekstedt-london.png" alt="Ekstedt at the Yard" class="w-full h-48 object-cover rounded-lg">
                 <div>
-                    <p class="text-sm text-orange-500 font-medium font-outfit">Travel, Photography</p>
-                    <h3 class="text-lg font-bold text-gray-800 font-outfit">Capturing the Northern Lights</h3>
-                    <p class="text-sm text-gray-500 font-outfit">October 12, 2024</p>
+                    <p class="text-sm text-mutedPink font-medium font-montserrat">Food, Travel</p>
+                    <h3 class="text-lg font-bold text-darkBrown font-montserrat">Amazing Scandinavian restaurant by Swedish Chef Niklas Ekstedt in London.</h3>
                 </div>
             </a>
         </article>
-
         <article>
             <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Articles/PNG/japanese-temple.png" alt="Japanese Temple" class="w-full h-48 object-cover">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Articles/kyoto-trip.png" alt="Kyoto Trip" class="w-full h-48 object-cover rounded-lg">
                 <div>
-                    <p class="text-sm text-orange-500 font-medium font-outfit">Travel, Culture</p>
-                    <h3 class="text-lg font-bold text-gray-800 font-outfit">A Cultural Tour of Kyoto</h3>
-                   <p class="text-sm text-gray-500 font-outfit">September 22, 2024</p>
+                    <p class="text-sm text-mutedPink font-medium font-montserrat">Travel, Culture</p>
+                    <h3 class="text-lg font-bold text-darkBrown font-montserrat">5 Days in Kyoto - A Must Visit Destination</h3>
                 </div>
             </a>
         </article>
-
         <article>
             <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Articles/PNG/vegan-tacos.png" alt="Vegan Tacos" class="w-full h-48 object-cover">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Articles/blueberry-muffins.png" alt="Blueberry Muffins" class="w-full h-48 object-cover rounded-lg">
                 <div>
-                    <p class="text-sm text-orange-500 font-medium font-outfit">Recipes, Vegan</p>
-                    <h3 class="text-lg font-bold text-gray-800 font-outfit">Vegan Tacos with Avocado Cream</h3>
-                   <p class="text-sm text-gray-500 font-outfit">September 18, 2024</p>
+                    <p class="text-sm text-mutedPink font-medium font-montserrat">Recipes, Desserts</p>
+                    <h3 class="text-lg font-bold text-darkBrown font-montserrat">Yummy and Fruity Blueberry Muffins</h3>
                 </div>
             </a>
         </article>
+    </div>
+</section>
 
-        <article>
-            <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Articles/PNG/thai-market.png" alt="Thai Market" class="w-full h-48 object-cover">
-                <div>
-                    <p class="text-sm text-orange-500 font-medium font-outfit">Travel, Food</p>
-                    <h3 class="text-lg font-bold text-gray-800 font-outfit">Exploring the Street Foods of Bangkok</h3>
-                   <p class="text-sm text-gray-500 font-outfit">October 3, 2024</p>
-                </div>
-            </a>
-        </article>
-
-        <article>
-            <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Articles/PNG/lava-cake.png" alt="Chocolate Lava Cake" class="w-full h-48 object-cover">
-                <div>
-                    <p class="text-sm text-orange-500 font-medium font-outfit">Recipes, Desserts</p>
-                    <h3 class="text-lg font-bold text-gray-800 font-outfit">Decadent Chocolate Lava Cake</h3>
-                    <p class="text-sm text-gray-500 font-outfit">September 15, 2024</p>
-                </div>
-            </a>
-        </article>
-
-        <article>
-            <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Articles/PNG/patagonian-landscape.png" alt="Patagonia Hiking" class="w-full h-48 object-cover">
-                <div>
-                    <p class="text-sm text-orange-500 font-medium font-outfit">Travel, Adventure</p>
-                    <h3 class="text-lg font-bold text-gray-800 font-outfit">Hiking the Trails of Patagonia</h3>
-                    <p class="text-sm text-gray-500 font-outfit">September 30, 2024</p>
-                </div>
-            </a>
-        </article>
+<section class="destinations px-6 py-12">
+    <h2 class="text-2xl font-bold font-recoleta text-center mb-6">Where to next?</h2>
+    <div class="flex overflow-x-auto space-x-4 p-4">
+        <button class="destination-tag">Japan</button>
+        <button class="destination-tag">Italy</button>
+        <button class="destination-tag">Thailand</button>
+        <button class="destination-tag">Mexico</button>
+        <button class="destination-tag">Portugal</button>
+        <button class="destination-tag">Greece</button>
+        <button class="destination-tag">Costa Rica</button>
+        <button class="destination-tag">Bali</button>
+        <button class="destination-tag">Sri Lanka</button>
     </div>
 </section>
 

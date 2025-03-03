@@ -1,10 +1,10 @@
-<footer class="bg-lightWhite py-12">
+<footer class="bg-offWhite py-12">
     <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Logo & Social Links -->
         <div class="flex flex-col gap-4">
             <a href="<?php echo home_url(); ?>" class="flex items-center gap-2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Footer Logo" class="w-8 h-8">
-                <span class="text-lg font-bold font-sen text-redOrange">Travelling Cooks</span>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TC logo.png" alt="Footer Logo" class="w-10 h-10">
+                <span class="text-lg font-bold font-recoleta text-mutedPink">Travelling Cooks</span>
             </a>
             <div class="flex gap-4">
                 <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Social_media_2/facebook.svg" alt="Facebook" class="w-6 h-6"></a>
@@ -41,7 +41,7 @@
             <p class="text-sm text-gray-600 mb-4">Stay updated with our latest travel and cooking adventures.</p>
             <form class="flex flex-col gap-4">
                 <input type="email" class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300" placeholder="Email address">
-                <button class="bg-redOrange text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600">
+                <button class="bg-mutedPink text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600">
                     Subscribe
                 </button>
             </form>

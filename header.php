@@ -9,18 +9,18 @@
 
 <body <?php body_class(); ?>>
 
-    <header class="bg-lightWhite shadow-md">
+    <header class="bg-white shadow-md">
             <div class="header-container mx-auto flex justify-between items-center px-6">
             <!-- Logo -->
             <a href="<?php echo home_url(); ?>" class="flex items-center gap-4">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo.svg" alt="Travelling Cooks Logo" class="w-8 h-8">
-                <span class="text-[32px] font-bold font-sen leading-none tracking-[-0.02em] text-redOrange">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TC Logo.png" alt="Travelling Cooks Logo" class="w-20 h-20">
+                <span class="text-[50px] font-bold font-satisfy leading-none tracking-[-0.02em] text-mutedPink">
                     Travelling Cooks
                 </span>
             </a>
 
             <!-- Navigation -->
-            <nav class="hidden md:flex space-x-8 font-outfit text-lg text-darkGray">
+            <nav class="hidden md:flex space-x-8 font-montserrat text-lg text-darkBrown">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'primary',
