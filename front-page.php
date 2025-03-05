@@ -12,7 +12,7 @@
 </section>
 
 <section class="latest-posts px-6 py-12">
-    <div class="flex justify-between items-center">
+    <div class="flex justify-center items-center">
         <h2 class="text-3xl text-slateGray font-bold font-recoleta">This Month's Featured Posts</h2>
     </div>
     <div class="blog-preview grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
