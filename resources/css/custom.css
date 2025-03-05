@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=buffalo&display=swap');
 
 html, body {
     max-width: 100%;
@@ -93,15 +93,50 @@ header nav {
 }
 
 .blog-preview article {
-    @apply bg-white rounded-lg shadow-md overflow-hidden p-4;
+    @apply bg-white rounded-lg shadow-md overflow-hidden p-4 transition-all duration-200;
+}
+
+.blog-preview .image-container {
+    @apply w-[320px] h-[320px] rounded-full overflow-hidden shadow-lg mx-auto relative;
 }
 
 .blog-preview img {
-    @apply w-full h-48 object-cover rounded-t-lg;
+    @apply absolute inset-0 w-full h-full object-cover;
 }
 
 .blog-preview article:hover {
-    @apply shadow-lg transform scale-105 transition-all;
+    @apply shadow-lg transform scale-105 transition-all hover:scale-105 transform transition-all duration-200;
+}
+
+.blog-preview article:hover .image-container {
+    @apply transform -translate-y-2;
+}
+
+/* Make sure container is centered on mobile */
+@media (max-width: 640px) {
+    .blog-preview .image-container {
+        @apply w-[280px] h-[280px];
+    }
+}
+
+.destination-chip {
+    @apply flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm 
+           border border-gray-200 hover:bg-offWhite transition-all duration-200
+           text-darkBrown font-montserrat text-lg;
+}
+
+.destination-chip i {
+    @apply text-mutedPink text-2xl;
+}
+
+.destinations .flex {
+    @apply flex-wrap max-w-4xl;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.destinations .flex::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
 }
 
 /* Footer Styling */

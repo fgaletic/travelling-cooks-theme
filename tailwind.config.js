@@ -29,7 +29,7 @@ module.exports = {
             fontFamily: {
                 recoleta: ['Recoleta', 'serif'], // For titles
                 montserrat: ['Montserrat', 'sans-serif'], // For body text
-                satisfy: ['Satisfy', 'cursive'], // For decorative text
+                buffalo: ['Buffalo', 'sans-serif'], // For decorative text
             },
             borderRadius: {
                 lg: '8px', // Keep rounded styling

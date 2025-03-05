@@ -43,6 +43,9 @@
 .relative {
     position: relative
 }
+.inset-0 {
+    inset: 0px
+}
 .right-0 {
     right: 0px
 }
@@ -106,50 +109,62 @@
 .h-1 {
     height: 0.25rem
 }
+.h-10 {
+    height: 2.5rem
+}
+.h-20 {
+    height: 5rem
+}
 .h-48 {
     height: 12rem
 }
 .h-6 {
     height: 1.5rem
 }
-.h-8 {
-    height: 2rem
-}
 .h-\[10vh\] {
     height: 10vh
+}
+.h-\[280px\] {
+    height: 280px
+}
+.h-\[320px\] {
+    height: 320px
 }
 .h-full {
     height: 100%
 }
-.h-20 {
-    height: 5rem
+.min-h-\[30vh\] {
+    min-height: 30vh
 }
-.h-10 {
-    height: 2.5rem
+.min-h-\[35vh\] {
+    min-height: 35vh
 }
 .min-h-screen {
     min-height: 100vh
 }
+.w-10 {
+    width: 2.5rem
+}
 .w-16 {
     width: 4rem
+}
+.w-20 {
+    width: 5rem
 }
 .w-6 {
     width: 1.5rem
 }
-.w-8 {
-    width: 2rem
+.w-\[280px\] {
+    width: 280px
+}
+.w-\[320px\] {
+    width: 320px
 }
 .w-auto {
     width: auto
 }
 .w-full {
     width: 100%
-}
-.w-20 {
-    width: 5rem
-}
-.w-10 {
-    width: 2.5rem
 }
 .max-w-\[600px\] {
     max-width: 600px
@@ -183,6 +198,9 @@
 .flex-col {
     flex-direction: column
 }
+.flex-wrap {
+    flex-wrap: wrap
+}
 .items-center {
     align-items: center
 }
@@ -195,6 +213,9 @@
 .gap-2 {
     gap: 0.5rem
 }
+.gap-3 {
+    gap: 0.75rem
+}
 .gap-4 {
     gap: 1rem
 }
@@ -203,11 +224,6 @@
 }
 .gap-8 {
     gap: 2rem
-}
-.space-x-4 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1rem * var(--tw-space-x-reverse));
-    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)))
 }
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
@@ -222,11 +238,11 @@
 .overflow-hidden {
     overflow: hidden
 }
-.overflow-x-auto {
-    overflow-x: auto
-}
 .rounded {
     border-radius: 0.25rem
+}
+.rounded-full {
+    border-radius: 9999px
 }
 .rounded-lg {
     border-radius: 8px
@@ -236,6 +252,10 @@
 }
 .border-b {
     border-bottom-width: 1px
+}
+.border-gray-200 {
+    --tw-border-opacity: 1;
+    border-color: rgb(229 231 235 / var(--tw-border-opacity))
 }
 .border-gray-300 {
     --tw-border-opacity: 1;
@@ -313,14 +333,14 @@
 .text-center {
     text-align: center
 }
+.font-buffalo {
+    font-family: Buffalo, sans-serif
+}
 .font-montserrat {
     font-family: Montserrat, sans-serif
 }
 .font-recoleta {
     font-family: Recoleta, serif
-}
-.font-satisfy {
-    font-family: Satisfy, cursive
 }
 .text-2xl {
     font-size: 1.5rem;
@@ -334,14 +354,14 @@
     font-size: 3rem;
     line-height: 1
 }
-.text-\[32px\] {
-    font-size: 32px
-}
-.text-\[64px\] {
-    font-size: 64px
+.text-\[50px\] {
+    font-size: 50px
 }
 .text-\[72px\] {
     font-size: 72px
+}
+.text-\[84px\] {
+    font-size: 84px
 }
 .text-lg {
     font-size: 1.125rem;
@@ -354,20 +374,11 @@
 .text-xl {
     font-size: 1.25rem
 }
-.text-\[3px\] {
-    font-size: 3px
+.text-\[60px\] {
+    font-size: 60px
 }
-.text-\[36px\] {
-    font-size: 36px
-}
-.text-\[42px\] {
-    font-size: 42px
-}
-.text-\[46px\] {
-    font-size: 46px
-}
-.text-\[50px\] {
-    font-size: 50px
+.text-\[64px\] {
+    font-size: 64px
 }
 .font-bold {
     font-weight: 700
@@ -445,6 +456,27 @@
     --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
+.shadow-sm {
+    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
+.transition-transform {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
+.duration-200 {
+    transition-duration: 200ms
+}
+.duration-300 {
+    transition-duration: 300ms
+}
 .alignfull {
     margin: 2rem calc(50% - 50vw) !important;
     max-width: 100vw !important;
@@ -505,6 +537,15 @@ body {
 .wp-block[data-align=full] {
     max-width: 100%
 }
+.hover\:scale-105:hover {
+    --tw-scale-x: 1.05;
+    --tw-scale-y: 1.05;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+.hover\:bg-offWhite:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(244 243 237 / var(--tw-bg-opacity))
+}
 .hover\:bg-orange-600:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(234 88 12 / var(--tw-bg-opacity))
@@ -521,6 +562,11 @@ body {
 .focus\:ring-orange-300:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(253 186 116 / var(--tw-ring-opacity))
+}
+.group:hover .group-hover\:scale-110 {
+    --tw-scale-x: 1.1;
+    --tw-scale-y: 1.1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 @media (min-width: 600px) {
     .sm\:grid-cols-2 {
@@ -552,8 +598,8 @@ body {
         font-size: 1.875rem;
         line-height: 2.25rem
     }
-    .md\:text-\[48px\] {
-        font-size: 48px
+    .md\:text-\[64px\] {
+        font-size: 64px
     }
     .md\:text-\[96px\] {
         font-size: 96px
