@@ -4,7 +4,7 @@
         <div class="flex flex-col gap-4">
             <a href="<?php echo home_url(); ?>" class="flex items-center gap-2">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TC logo.png" alt="Footer Logo" class="w-10 h-10">
-                <span class="text-lg font-bold font-recoleta text-mutedPink">Travelling Cooks</span>
+                <span class="text-2xl font-bold font-buffalo text-mutedPink">Travelling Cooks</span>
             </a>
             <div class="flex gap-4">
                 <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Social_media_2/facebook.svg" alt="Facebook" class="w-6 h-6"></a>
@@ -37,7 +37,7 @@
 
         <!-- Newsletter -->
         <div>
-            <h4 class="text-lg font-bold font-buffalo mb-4">Travelling Cooks</h4>
+            <h4 class="text-lg font-bold font-recoleta mb-4">Newsletter</h4>
             <p class="text-sm text-dmsans text-gray-600 mb-4">Stay updated with our latest travel and cooking adventures.</p>
             <form class="flex flex-col gap-4">
                 <input type="email" class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300" placeholder="Email address">

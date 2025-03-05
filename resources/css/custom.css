@@ -12,7 +12,7 @@ header {
 }
 
 header a {
-    @apply flex items-center gap-2 mb-4 w-full justify-center;
+    @apply flex flex-col items-center gap-2 mb-4 w-full justify-center;
 }
 
 header nav {

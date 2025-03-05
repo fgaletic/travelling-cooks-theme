@@ -37,6 +37,9 @@
         max-width: 1440px
     }
 }
+.visible {
+    visibility: visible
+}
 .absolute {
     position: absolute
 }
@@ -97,6 +100,9 @@
 .mt-8 {
     margin-top: 2rem
 }
+.block {
+    display: block
+}
 .flex {
     display: flex
 }
@@ -130,8 +136,8 @@
 .h-full {
     height: 100%
 }
-.h-20 {
-    height: 5rem
+.h-8 {
+    height: 2rem
 }
 .min-h-\[15vh\] {
     min-height: 15vh
@@ -139,14 +145,8 @@
 .min-h-\[30vh\] {
     min-height: 30vh
 }
-.min-h-\[35vh\] {
-    min-height: 35vh
-}
 .min-h-screen {
     min-height: 100vh
-}
-.min-h-\[80vh\] {
-    min-height: 80vh
 }
 .w-10 {
     width: 2.5rem
@@ -172,11 +172,8 @@
 .w-full {
     width: 100%
 }
-.w-0 {
-    width: 0px
-}
-.w-20 {
-    width: 5rem
+.w-8 {
+    width: 2rem
 }
 .max-w-\[600px\] {
     max-width: 600px
@@ -192,12 +189,6 @@
 }
 .max-w-sm {
     max-width: 24rem
-}
-.max-w-screen-md {
-    max-width: 700px
-}
-.max-w-screen-lg {
-    max-width: 960px
 }
 .scale-105 {
     --tw-scale-x: 1.05;
@@ -253,8 +244,16 @@
     margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
 }
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1rem * var(--tw-space-y-reverse))
+}
 .overflow-hidden {
     overflow: hidden
+}
+.whitespace-nowrap {
+    white-space: nowrap
 }
 .rounded {
     border-radius: 0.25rem
@@ -270,6 +269,9 @@
 }
 .border-b {
     border-bottom-width: 1px
+}
+.border-t {
+    border-top-width: 1px
 }
 .border-gray-200 {
     --tw-border-opacity: 1;
@@ -348,6 +350,10 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem
 }
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem
+}
 .text-center {
     text-align: center
 }
@@ -381,9 +387,6 @@
 .text-\[72px\] {
     font-size: 72px
 }
-.text-\[84px\] {
-    font-size: 84px
-}
 .text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem
@@ -395,8 +398,8 @@
 .text-xl {
     font-size: 1.25rem
 }
-.text-\[64px\] {
-    font-size: 64px
+.text-\[40px\] {
+    font-size: 40px
 }
 .font-bold {
     font-weight: 700
@@ -457,18 +460,12 @@
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity))
 }
-.text-\[px\] {
-    color: px
-}
 .antialiased {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
 .opacity-70 {
     opacity: 0.7
-}
-.opacity-80 {
-    opacity: 0.8
 }
 .shadow-lg {
     --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -495,11 +492,21 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms
 }
+.transition {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
 .duration-200 {
     transition-duration: 200ms
 }
 .duration-300 {
     transition-duration: 300ms
+}
+.ease-in-out {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
 }
 .alignfull {
     margin: 2rem calc(50% - 50vw) !important;
@@ -574,6 +581,10 @@ body {
     --tw-bg-opacity: 1;
     background-color: rgb(234 88 12 / var(--tw-bg-opacity))
 }
+.hover\:text-mutedPink:hover {
+    --tw-text-opacity: 1;
+    color: rgb(211 158 138 / var(--tw-text-opacity))
+}
 .focus\:outline-none:focus {
     outline: 2px solid transparent;
     outline-offset: 2px
@@ -596,27 +607,12 @@ body {
     .sm\:grid-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr))
     }
-    .sm\:text-\[16px\] {
-        font-size: 16px
-    }
-    .sm\:text-\[24px\] {
-        font-size: 24px
-    }
     .sm\:text-\[36px\] {
         font-size: 36px
     }
     .sm\:text-base {
         font-size: 1rem;
         line-height: 1.5rem
-    }
-    .sm\:text-\[40px\] {
-        font-size: 40px
-    }
-    .sm\:text-large {
-        font-size: 1.125rem
-    }
-    .sm\:text-\[28px\] {
-        font-size: 28px
     }
     .sm\:text-xl {
         font-size: 1.25rem
@@ -639,24 +635,28 @@ body {
     .md\:w-1\/2 {
         width: 50%
     }
+    .md\:flex-row {
+        flex-direction: row
+    }
+    .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-x-reverse: 0;
+        margin-right: calc(2rem * var(--tw-space-x-reverse));
+        margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)))
+    }
+    .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(0px * var(--tw-space-y-reverse))
+    }
     .md\:text-3xl {
         font-size: 1.875rem;
         line-height: 2.25rem
-    }
-    .md\:text-\[22px\] {
-        font-size: 22px
-    }
-    .md\:text-\[28px\] {
-        font-size: 28px
     }
     .md\:text-\[64px\] {
         font-size: 64px
     }
     .md\:text-\[96px\] {
         font-size: 96px
-    }
-    .md\:text-\[72px\] {
-        font-size: 72px
     }
     .md\:leading-\[96px\] {
         line-height: 96px
@@ -672,8 +672,5 @@ body {
     .lg\:text-5xl {
         font-size: 3rem;
         line-height: 1
-    }
-    .lg\:text-\[36px\] {
-        font-size: 36px
     }
 }
