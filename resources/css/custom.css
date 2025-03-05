@@ -8,11 +8,11 @@ html, body {
 
 /* Header Styling */
 header {
-    @apply bg-white shadow-md w-full;
+    @apply w-full bg-white shadow-md z-50;
 }
 
 header a {
-    @apply flex flex-col items-center gap-2 mb-4 w-full justify-center;
+    @apply flex items-center gap-2 mb-4 w-full justify-center;
 }
 
 header nav {
@@ -27,13 +27,50 @@ header nav .nav-menu {
     @apply flex flex-col items-center justify-center py-6 min-h-[15vh];
 }
 
+/* Mobile Navigation Styling */
+#mobile-menu {
+    @apply hidden fixed top-0 left-0 w-full h-screen bg-white shadow-md p-6 transition-all duration-300 flex flex-col items-center justify-center;
+}
+
+#mobile-menu.active {
+    @apply block;
+}
+
+/* Make sure the mobile menu button is properly aligned */
+#primary-menu-toggle {
+    @apply text-gray-800 focus:outline-none fixed top-6 right-6 z-50;
+}
+
+/* Change icon to "X" when menu is active */
+.menu-open #primary-menu-toggle svg {
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>');
+}
+
+/* Adjust the header layout for mobile */
 @media (max-width: 960px) {
     .header-container {
-        @apply px-4; /* Adjust for smaller screens */
+        @apply flex flex-col items-center px-4 py-4;
     }
-    
-    header a span {
-        @apply text-4xl; /* Smaller font size for mobile */
+
+    nav {
+        display: none !important; /* Always hide desktop menu on mobile */
+    }
+
+    #primary-menu-toggle {
+        display: block !important; /* Ensure hamburger menu is always visible */
+    }
+
+    header {
+        @apply fixed top-0 left-0 w-full bg-white shadow-md z-50;
+    }
+
+    /* Ensure the body starts below the fixed header */
+    body {
+        padding-top: calc(100px + 1rem);
+    }
+
+    #mobile-menu {
+        @apply fixed top-24 left-0 w-full bg-white shadow-md p-6 z-[100]; /* Higher z-index to ensure it's on top */
     }
 }
 
@@ -57,6 +94,7 @@ header nav .nav-menu {
     display: flex;
     align-items: center;
     position: relative;
+    padding-top: 5rem; 
 }
 
 .hero-section h1 {
@@ -101,7 +139,7 @@ header nav .nav-menu {
 }
 
 .blog-preview article {
-    @apply bg-white rounded-lg shadow-md overflow-hidden p-4 transition-all duration-200;
+    @apply bg-white rounded-sm shadow-md overflow-hidden p-4 transition-all duration-200;
 }
 
 .blog-preview .image-container {

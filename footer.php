@@ -2,14 +2,20 @@
     <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Logo & Social Links -->
         <div class="flex flex-col gap-4">
-            <a href="<?php echo home_url(); ?>" class="flex items-center gap-2">
+        <a href="<?php echo home_url(); ?>" class="flex items-center gap-2">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TC logo.png" alt="Footer Logo" class="w-10 h-10">
                 <span class="text-2xl font-bold font-buffalo text-mutedPink">Travelling Cooks</span>
             </a>
             <div class="flex gap-4">
-                <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Social_media_2/facebook.svg" alt="Facebook" class="w-6 h-6"></a>
-                <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Social_media_2/instagram.svg" alt="Instagram" class="w-6 h-6"></a>
-                <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Social_media_2/twitter.svg" alt="Twitter" class="w-6 h-6"></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram text-2xl text-gray-500 hover:text-mutedPink"></i>
+                </a>
+                <a href="https://www.pinterest.com" target="_blank" aria-label="Pinterest">
+                    <i class="fab fa-pinterest text-2xl text-gray-500 hover:text-mutedPink"></i>
+                </a>
+                <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+                    <i class="fab fa-tiktok text-2xl text-gray-500 hover:text-mutedPink"></i>
+                </a>
             </div>
         </div>
 
@@ -29,9 +35,8 @@
             <h4 class="text-lg font-bold font-recoleta mb-4">Follow Us</h4>
             <ul class="space-y-2">
                 <li><a href="#">Instagram</a></li>
-                <li><a href="#">Facebook</a></li>
                 <li><a href="#">Pinterest</a></li>
-                <li><a href="#">Twitter</a></li>
+                <li><a href="#">TikTok</a></li>
             </ul>
         </div>
 

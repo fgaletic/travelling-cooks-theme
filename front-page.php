@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <section class="intro-section bg-offWhite px-6 py-12 text-center">
-    <div class="max-w-screen-xl mx-auto min-h-[30vh] flex flex-col justify-center items-center">
+    <div class="max-w-screen-xl mx-auto margin-top:[25rem] min-h-[30vh] flex flex-col justify-center items-center">
         <h1 class="text-[48px] md:text-[64px] sm:text-[36px] font-recoleta text-darkBrown">
             Welcome to my world of travel and food
         </h1>

@@ -41,13 +41,16 @@ add_action( 'after_setup_theme', 'tailpress_setup' );
  * Enqueue theme assets.
  */
 function tailpress_enqueue_scripts() {
-	$theme = wp_get_theme();
+    $theme = wp_get_theme();
 
-	wp_enqueue_style( 'tailpress', tailpress_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
-	wp_enqueue_script( 'tailpress', tailpress_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
+    wp_enqueue_style('tailpress', get_stylesheet_directory_uri() . '/css/app.css', array(), $theme->get('Version'));
+
+    // Add cache-busting versioning to avoid loading old files
+    $script_version = filemtime(get_template_directory() . '/js/app.js'); 
+    wp_enqueue_script('tailpress-js', get_stylesheet_directory_uri() . '/js/app.js', array('jquery'), $script_version, true);
 }
 
-add_action( 'wp_enqueue_scripts', 'tailpress_enqueue_scripts' );
+add_action('wp_enqueue_scripts', 'tailpress_enqueue_scripts');
 
 /**
  * Get asset path.
@@ -129,3 +132,4 @@ function disable_avada_assets() {
     wp_dequeue_script('fusion-scripts');
 }
 add_action('wp_enqueue_scripts', 'disable_avada_assets', 20);
+
