@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
 <section class="intro-section bg-offWhite px-6 py-12 text-center">
-    <div class="max-w-screen-md mx-auto min-h-[35vh] flex flex-col justify-center items-center">
-        <h1 class="text-[84px] md:text-[64px] sm:text-[36px] font-recoleta font-bold text-darkBrown">
-            Travelling Cooks
+    <div class="max-w-screen-xl mx-auto min-h-[30vh] flex flex-col justify-center items-center">
+        <h1 class="text-[48px] md:text-[64px] sm:text-[36px] font-recoleta text-darkBrown">
+            Welcome to my world of travel and food
         </h1>
-        <p class="text-lg sm:text-base font-montserrat text-darkBrown mt-4">
-            Welcome to my world of travel and food, where I navigate this exciting chapter of my life in my fabulous 50ish ++
+        <p class="text-lg sm:text-xl font-dmsans text-darkBrown mt-4">
+            ..where I navigate this exciting chapter of my life in my fabulous 50ish ++
         </p>
     </div>
 </section>
@@ -53,24 +53,26 @@
 </section>
 
 <section class="destinations px-6 py-12 min-h-[30vh]">
-    <h2 class="text-5xl font-recoleta text-center mb-6">Where to next?</h2>
-    <div class="flex justify-center items-center mx-auto gap-3">
-        <button class="destination-chip">
-            <i class="fas fa-torii-gate"></i>
-            <span>Japan</span>
-        </button>
-        <button class="destination-chip">
-            <i class="fas fa-pizza-slice"></i>
-            <span>Italy</span>
-        </button>
-        <button class="destination-chip">
-            <i class="fas fa-landmark"></i>
-            <span>United Kingdom</span>
-        </button>
-        <button class="destination-chip">
-            <i class="fas fa-beer"></i>
-            <span>Belgium</span>
-        </button>
+    <div class="max-w-screen-xl mx-auto">
+        <h2 class="text-5xl font-recoleta text-center mb-6">Where to next?</h2>
+        <div class="flex justify-center items-center mx-auto gap-3">
+            <button class="destination-chip">
+                <i class="fas fa-torii-gate"></i>
+                <span>Japan</span>
+            </button>
+            <button class="destination-chip">
+                <i class="fas fa-pizza-slice"></i>
+                <span>Italy</span>
+            </button>
+            <button class="destination-chip">
+                <i class="fas fa-landmark"></i>
+                <span>United Kingdom</span>
+            </button>
+            <button class="destination-chip">
+                <i class="fas fa-beer"></i>
+                <span>Belgium</span>
+            </button>
+        </div>
     </div>
 </section>
 

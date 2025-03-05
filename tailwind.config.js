@@ -28,7 +28,7 @@ module.exports = {
             },
             fontFamily: {
                 recoleta: ['Recoleta', 'serif'], // For titles
-                montserrat: ['Montserrat', 'sans-serif'], // For body text
+                dmsans: ['DM+Sans', 'sans-serif'], // For body text
                 buffalo: ['Buffalo', 'sans-serif'], // For decorative text
             },
             borderRadius: {

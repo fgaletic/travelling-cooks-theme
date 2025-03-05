@@ -10,23 +10,23 @@
 
 <body <?php body_class(); ?>>
 
-    <header class="bg-white shadow-md">
-            <div class="header-container mx-auto flex justify-between items-center px-6">
+    <header class="bg-white shadow-md centered-div">
+        <div class="header-container">
             <!-- Logo -->
-            <a href="<?php echo home_url(); ?>" class="flex items-center gap-2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TC Logo.png" alt="Travelling Cooks Logo" class="w-20 h-20">
-                <span class="text-[64px] font-buffalo leading-none tracking-[-0.02em] text-mutedPink">
+            <a href="<?php echo home_url(); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TC Logo.png" alt="Travelling Cooks Logo" class="w-40 h-40">
+                <span class="text-[100px] font-buffalo leading-none tracking-[-0.02em] text-mutedPink">
                     Travelling Cooks
                 </span>
             </a>
 
             <!-- Navigation -->
-            <nav class="hidden md:flex space-x-8 font-montserrat text-lg text-darkBrown">
+            <nav class="hidden md:block text-darkBrown">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'primary',
                     'container' => false,
-                    'menu_class' => 'flex space-x-8',
+                    'menu_class' => 'nav-menu',
                     'fallback_cb' => false
                 ));
                 ?>
