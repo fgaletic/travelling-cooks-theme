@@ -15,40 +15,41 @@
     <div class="flex justify-center items-center">
         <h2 class="text-3xl text-slateGray font-bold font-recoleta">This Month's Featured Posts</h2>
     </div>
-    <div class="blog-preview grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-        <article class="text-center flex flex-col items-center">
-            <a href="#" class="group w-full">
-                <div class="image-container mb-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Articles/PNG/northern-lights.png" alt="Ekstedt at the Yard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                </div>
-                <div class="space-y-2">
-                    <p class="text-sm text-mutedPink font-medium font-recoleta">Food, Travel</p>
-                    <h3 class="text-lg font-bold text-darkBrown font-recoleta">Amazing Scandinavian restaurant by Swedish Chef Niklas Ekstedt in London</h3>
-                </div>
-            </a>
-        </article>
-        <article class="text-center flex flex-col items-center">
-            <a href="#" class="group w-full">
-                <div class="image-container mb-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Articles/PNG/japanese-temple.png" alt="Kyoto Trip" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                </div>
-                <div class="space-y-2">
-                    <p class="text-sm text-mutedPink font-medium font-recoleta">Travel, Culture</p>
-                    <h3 class="text-lg font-bold text-darkBrown font-recoleta">5 Days in Kyoto - A Must Visit Destination</h3>
-                </div>
-            </a>
-        </article>
-        <article class="text-center flex flex-col items-center">
-            <a href="#" class="group w-full">
-                <div class="image-container mb-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Articles/PNG/fruit-bowl.png" alt="Blueberry Muffins" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                </div>
-                <div class="space-y-2">
-                    <p class="text-sm text-mutedPink font-medium font-recoleta">Recipes, Desserts</p>
-                    <h3 class="text-lg font-bold text-darkBrown font-recoleta">Yummy and Fruity Blueberry Muffins</h3>
-                </div>
-            </a>
-        </article>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <?php
+        $args = array(
+            'posts_per_page' => 3,
+            'orderby' => 'date',
+            'order' => 'DESC', // Display the newest posts first
+        );
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) :
+            while ($query->have_posts()) : $query->the_post();
+        ?>
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                     <a href="<?php the_permalink(); ?>">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <div class="image-container">
+                                <?php the_post_thumbnail('large', array('class' => 'w-full h-full object-cover')); ?>
+                            </div>
+                        <?php endif; ?>
+                    </a>
+                    <div class="p-6">
+                        <h2 class="text-2xl font-recoleta text-darkBrown mb-2">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </h2>
+                        <p class="text-slateGray font-dmsans mb-4"><?php echo get_the_excerpt(); ?></p>
+                        <a href="<?php the_permalink(); ?>" class="inline-block bg-mutedPink text-white font-dmsans py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors">Read More</a>
+                    </div>
+                </article>
+        <?php
+            endwhile;
+            wp_reset_postdata(); // Restore original Post Data
+        else :
+            echo '<p>No posts found</p>';
+        endif;
+        ?>
     </div>
 </section>
 

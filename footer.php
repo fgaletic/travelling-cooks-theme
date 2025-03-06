@@ -8,13 +8,13 @@
             </a>
             <div class="flex gap-4">
                 <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram text-2xl text-gray-500 hover:text-mutedPink"></i>
+                    <i class="fab fa-instagram text-2xl text-slateGray hover:text-mutedPink"></i>
                 </a>
                 <a href="https://www.pinterest.com" target="_blank" aria-label="Pinterest">
-                    <i class="fab fa-pinterest text-2xl text-gray-500 hover:text-mutedPink"></i>
+                    <i class="fab fa-pinterest text-2xl text-slateGray hover:text-mutedPink"></i>
                 </a>
                 <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
-                    <i class="fab fa-tiktok text-2xl text-gray-500 hover:text-mutedPink"></i>
+                    <i class="fab fa-tiktok text-2xl text-slateGray hover:text-mutedPink"></i>
                 </a>
             </div>
         </div>

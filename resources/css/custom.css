@@ -209,3 +209,18 @@ footer input {
 footer button {
     @apply bg-mutedPink text-white font-dmsans py-2 px-4 rounded-lg hover:bg-orange-600;
 }
+
+    /* Round images just on front page */
+    .home .latest-posts .image-container img {
+        border-radius: 50%; /* Make the image round */
+        width: 400px; /* Adjust to your desired size */
+        height: 400px; /* Should be equal to width for a perfect circle */
+        object-fit: cover; /* Important to maintain aspect ratio */
+    }
+
+     .home .latest-posts .image-container {
+        display: flex;
+        justify-content: center; /* Horizontally center the image */
+        align-items: center;     /* Vertically center the image */
+        margin-bottom: 1rem;
+    }
