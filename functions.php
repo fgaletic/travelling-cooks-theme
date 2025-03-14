@@ -133,3 +133,24 @@ function disable_avada_assets() {
 }
 add_action('wp_enqueue_scripts', 'disable_avada_assets', 20);
 
+// Add custom image sizes with specific crop positions
+add_action('after_setup_theme', function() {
+    // Card thumbnails (3:2 ratio) - crop from center
+    add_image_size('card-thumbnail', 600, 400, array('center', 'center'));
+    
+    // Square thumbnails for round images - crop from center
+    add_image_size('square-thumbnail', 400, 400, array('center', 'center'));
+    
+    // Hero image (16:9 ratio) - crop from center top
+    add_image_size('hero-image', 1920, 1080, array('center', 'top'));
+});
+
+// Make custom image sizes available in WordPress admin
+add_filter('image_size_names_choose', function($sizes) {
+    return array_merge($sizes, array(
+        'card-thumbnail' => __('Card Thumbnail'),
+        'square-thumbnail' => __('Square Thumbnail'),
+        'hero-image' => __('Hero Image')
+    ));
+});
+

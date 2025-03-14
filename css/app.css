@@ -469,6 +469,8 @@ video {
   height: 2rem;
 }.h-\[280px\]{
   height: 280px;
+}.h-\[300px\]{
+  height: 300px;
 }.h-\[320px\]{
   height: 320px;
 }.h-auto{
@@ -499,6 +501,8 @@ video {
   width: 100%;
 }.max-w-3xl{
   max-width: 48rem;
+}.max-w-7xl{
+  max-width: 80rem;
 }.max-w-\[600px\]{
   max-width: 600px;
 }.max-w-full{
@@ -586,6 +590,9 @@ video {
 }.border-primary{
   --tw-border-opacity: 1;
   border-color: rgb(14 165 233 / var(--tw-border-opacity));
+}.bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }.bg-gray-200{
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -601,6 +608,10 @@ video {
 }.bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}.bg-opacity-30{
+  --tw-bg-opacity: 0.3;
+}.bg-opacity-40{
+  --tw-bg-opacity: 0.4;
 }.bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }.from-orange-50{
@@ -737,6 +748,12 @@ video {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}.transition{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }.transition-all{
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1029,6 +1046,11 @@ video {
   width: auto;
   -o-object-fit: cover;
      object-fit: cover;
+}img.hero-section img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    font-family: "object-fit: cover"; /* IE11 fallback */
+}.hero-section img {
     z-index: 1; /* Place the image behind the text */
     opacity: 0.9;
 }/* Slightly transparent for readability */@media (max-width: 700px) {.hero-section img{
@@ -1078,6 +1100,10 @@ video {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}img.blog-preview img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    font-family: "object-fit: cover"; /* IE11 fallback */
 }.blog-preview article:hover{
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -1205,17 +1231,59 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(234 88 12 / var(--tw-bg-opacity));
 }/* Round images just on front page */.home .latest-posts .image-container img {
-        border-radius: 50%; /* Make the image round */
-        width: 400px; /* Adjust to your desired size */
-        height: 400px; /* Should be equal to width for a perfect circle */
-        -o-object-fit: cover;
-           object-fit: cover; /* Important to maintain aspect ratio */
-    }.home .latest-posts .image-container {
-        display: flex;
-        justify-content: center; /* Horizontally center the image */
-        align-items: center;     /* Vertically center the image */
-        margin-bottom: 1rem;
-    }@font-face {
+    border-radius: 50%; /* Make the image round */
+    width: 400px; /* Adjust to your desired size */
+    height: 400px; /* Should be equal to width for a perfect circle */
+    -o-object-fit: cover;
+       object-fit: cover; /* Important to maintain aspect ratio */
+}.home .latest-posts .image-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the image */
+    align-items: center;     /* Vertically center the image */
+    margin-bottom: 1rem;
+}/* Flip Card Styles */.flip-card{
+  position: relative;
+    perspective: 1000px;
+}.flip-card-inner{
+  position: relative;
+  height: 100%;
+  width: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}.flip-card-front,
+.flip-card-back{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}.flip-card-back {
+    transform: rotateY(180deg);
+}/* Safari Fix for Flip Card */@media not all and (-webkit-min-device-pixel-ratio:0), not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        .flip-card-back {
+            transform: rotateY(180deg) translateZ(1px);
+        }
+    }
+}/* Image handling */.aspect-w-3 {
+    position: relative;
+    padding-bottom: 66.666667%; /* 2:3 aspect ratio */
+}.aspect-w-3 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}img.object-cover {
+    -o-object-fit: cover;
+       object-fit: cover;
+    font-family: "object-fit: cover"; /* IE11 fallback */
+}@font-face {
     font-family: 'Recoleta';
     src: url(../fonts/Recoleta-RegularDEMO.otf?fd9bfd35d1085b5c6511b5af3adaf4ba) format('opentype');
     font-weight: normal;
@@ -1253,6 +1321,8 @@ video {
 }.focus\:ring-orange-300:focus{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(253 186 116 / var(--tw-ring-opacity));
+}.group:hover .group-hover\:bg-opacity-50{
+  --tw-bg-opacity: 0.5;
 }@media (min-width: 600px){.sm\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }.sm\:text-\[36px\]{

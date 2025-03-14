@@ -210,17 +210,74 @@ footer button {
     @apply bg-mutedPink text-white font-dmsans py-2 px-4 rounded-lg hover:bg-orange-600;
 }
 
-    /* Round images just on front page */
-    .home .latest-posts .image-container img {
-        border-radius: 50%; /* Make the image round */
-        width: 400px; /* Adjust to your desired size */
-        height: 400px; /* Should be equal to width for a perfect circle */
-        object-fit: cover; /* Important to maintain aspect ratio */
-    }
+/* Round images just on front page */
+.home .latest-posts .image-container img {
+    border-radius: 50%; /* Make the image round */
+    width: 400px; /* Adjust to your desired size */
+    height: 400px; /* Should be equal to width for a perfect circle */
+    object-fit: cover; /* Important to maintain aspect ratio */
+}
 
-     .home .latest-posts .image-container {
-        display: flex;
-        justify-content: center; /* Horizontally center the image */
-        align-items: center;     /* Vertically center the image */
-        margin-bottom: 1rem;
+.home .latest-posts .image-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the image */
+    align-items: center;     /* Vertically center the image */
+    margin-bottom: 1rem;
+}
+
+/* Flip Card Styles */
+.flip-card {
+    @apply relative;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    @apply relative w-full h-full;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    @apply absolute w-full h-full rounded-lg;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+/* Safari Fix for Flip Card */
+@media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        .flip-card-back {
+            transform: rotateY(180deg) translateZ(1px);
+        }
     }
+}
+
+/* Image handling */
+.aspect-w-3 {
+    position: relative;
+    padding-bottom: 66.666667%; /* 2:3 aspect ratio */
+}
+
+.aspect-w-3 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+img.object-cover {
+    object-fit: cover;
+    font-family: "object-fit: cover"; /* IE11 fallback */
+}
