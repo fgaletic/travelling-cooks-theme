@@ -155,6 +155,12 @@
 .mt-8 {
     margin-top: 2rem
 }
+.mr-4 {
+    margin-right: 1rem
+}
+.mr-2 {
+    margin-right: 0.5rem
+}
 .block {
     display: block
 }
@@ -203,6 +209,9 @@
 .h-screen {
     height: 100vh
 }
+.h-6 {
+    height: 1.5rem
+}
 .min-h-\[15vh\] {
     min-height: 15vh
 }
@@ -232,6 +241,9 @@
 }
 .w-full {
     width: 100%
+}
+.w-6 {
+    width: 1.5rem
 }
 .max-w-3xl {
     max-width: 48rem
@@ -270,6 +282,9 @@
 }
 .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr))
+}
+.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
 }
 .flex-col {
     flex-direction: column
@@ -359,6 +374,9 @@
 .border-l-4 {
     border-left-width: 4px
 }
+.border-t {
+    border-top-width: 1px
+}
 .border-gray-200 {
     --tw-border-opacity: 1;
     border-color: rgb(229 231 235 / var(--tw-border-opacity))
@@ -408,6 +426,9 @@
 }
 .bg-opacity-40 {
     --tw-bg-opacity: 0.4
+}
+.bg-opacity-10 {
+    --tw-bg-opacity: 0.1
 }
 .bg-gradient-to-r {
     background-image: linear-gradient(to right, var(--tw-gradient-stops))
@@ -471,6 +492,9 @@
     padding-top: 2rem;
     padding-bottom: 2rem
 }
+.pt-6 {
+    padding-top: 1.5rem
+}
 .text-left {
     text-align: left
 }
@@ -530,6 +554,15 @@
 }
 .font-light {
     font-weight: 300
+}
+.font-medium {
+    font-weight: 500
+}
+.capitalize {
+    text-transform: capitalize
+}
+.italic {
+    font-style: italic
 }
 .leading-\[78px\] {
     line-height: 78px
@@ -605,6 +638,9 @@
     --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+.outline {
+    outline-style: solid
 }
 .transition {
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
@@ -772,6 +808,12 @@ body {
     }
     .md\:grid-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+    .md\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr))
     }
     .md\:text-3xl {
         font-size: 1.875rem;
