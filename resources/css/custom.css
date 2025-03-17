@@ -281,3 +281,66 @@ img.object-cover {
     object-fit: cover;
     font-family: "object-fit: cover"; /* IE11 fallback */
 }
+
+/* Pagination Styles */
+.navigation.pagination {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation.pagination .nav-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.page-numbers {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: #4B5563;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+}
+
+.page-numbers.current {
+    background-color: #F87171;
+    color: white;
+}
+
+.page-numbers:hover:not(.current) {
+    background-color: #F87171;
+    color: white;
+}
+
+.navigation.pagination .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 0.75rem;
+    border-radius: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    color: #4B5563;
+    transition: all 0.2s;
+}
+
+.navigation.pagination .page-numbers.current {
+    background-color: #F87171;
+    color: white;
+}
+
+.navigation.pagination .page-numbers:hover:not(.current) {
+    background-color: #F87171;
+    color: white;
+}
+
+.navigation.pagination .dots {
+    padding: 0 0.5rem;
+}
+
+.navigation.pagination .prev,
+.navigation.pagination .next {
+    font-size: 1rem;
+}

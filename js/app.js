@@ -7,7 +7,8 @@
   \*****************************/
 /***/ (() => {
 
-console.log("🔥 app.js is being executed!");
+// console.log("🔥 app.js is being executed!");
+
 document.addEventListener("DOMContentLoaded", function () {
   var menuToggle = document.getElementById("primary-menu-toggle");
   var mobileMenu = document.getElementById("mobile-menu");

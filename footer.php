@@ -22,12 +22,14 @@
         <!-- Quick Links -->
         <div>
             <h4 class="text-lg font-bold font-recoleta mb-4">Quick Links</h4>
-            <ul class="space-y-2">
-                <li><a href="<?php echo home_url(); ?>">Home</a></li>
-                <li><a href="<?php echo home_url('/blog'); ?>">Blog</a></li>
-                <li><a href="<?php echo home_url('/about-us'); ?>">About Us</a></li>
-                <li><a href="<?php echo home_url('/contact'); ?>">Contact Us</a></li>
-            </ul>
+            <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'footer',
+                    'menu_class' => 'space-y-2',
+                    'container' => false,
+                    'fallback_cb' => false,
+                ));
+            ?>
         </div>
 
         <!-- Follow Us -->
@@ -53,3 +55,40 @@
         </div>
     </div>
 </footer>
+
+<!-- Bottom Footer Bar -->
+<div class="bg-gray-100 py-4">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-600">
+        <div>
+            &copy; <?php echo date('Y'); ?> Travelling Cooks. All rights reserved.
+        </div>
+        <div class="flex gap-4 mt-2 sm:mt-0">
+            <a href="/privacy-policy" class="hover:text-mutedPink">Privacy Policy</a>
+            <a href="/terms-of-service" class="hover:text-mutedPink">Terms of Service</a>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Create the button
+    var button = document.createElement('button');
+    button.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    button.className = 'back-to-top hidden fixed bottom-4 right-4 bg-mutedPink hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition-all';
+    document.body.appendChild(button);
+
+    // Show/hide button based on scroll position
+    window.onscroll = function() {
+        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+            button.classList.remove('hidden');
+        } else {
+            button.classList.add('hidden');
+        }
+    };
+
+    // Scroll to top when clicked
+    button.onclick = function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+});
+</script>

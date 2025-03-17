@@ -1,4 +1,4 @@
-console.log("🔥 app.js is being executed!");
+// console.log("🔥 app.js is being executed!");
 
 document.addEventListener("DOMContentLoaded", function () {
       const menuToggle = document.getElementById("primary-menu-toggle");

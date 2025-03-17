@@ -6,11 +6,10 @@
 function tailpress_setup() {
 	add_theme_support( 'title-tag' );
 
-	register_nav_menus(
-		array(
-			'primary' => __( 'Primary Menu', 'tailpress' ),
-		)
-	);
+	register_nav_menus(array(
+		'primary' => __('Primary Menu'),
+		'footer' => __('Footer Menu')
+	));
 
 	add_theme_support(
 		'html5',
@@ -153,4 +152,22 @@ add_filter('image_size_names_choose', function($sizes) {
         'hero-image' => __('Hero Image')
     ));
 });
+
+function travelling_cooks_scripts() {
+    // Add Font Awesome
+    wp_enqueue_style(
+        'font-awesome',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'
+    );
+
+    // Add mobile menu script
+    wp_enqueue_script(
+        'travelling-cooks-mobile-menu',
+        get_template_directory_uri() . '/assets/js/app.js',
+        array(),
+        '1.0',
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'travelling_cooks_scripts');
 
