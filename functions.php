@@ -171,3 +171,152 @@ function travelling_cooks_scripts() {
 }
 add_action('wp_enqueue_scripts', 'travelling_cooks_scripts');
 
+// Register Custom Post Type: Destinations
+function travelling_cooks_register_post_types() {
+    register_post_type('destination', array(
+        'labels' => array(
+            'name' => __('Destinations'),
+            'singular_name' => __('Destination'),
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'rewrite' => array('slug' => 'destinations'),
+    ));
+}
+add_action('init', 'travelling_cooks_register_post_types');
+
+// Add ACF Options Page
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+        'page_title' => 'Theme Settings',
+        'menu_title' => 'Theme Settings',
+        'menu_slug' => 'theme-settings',
+        'capability' => 'edit_posts',
+        'redirect' => false,
+    ));
+}
+
+function travelling_cooks_customize_register($wp_customize) {
+    // Add Hero Section Title
+    $wp_customize->add_section('hero_section', array(
+        'title' => __('Hero Section', 'travelling-cooks'),
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('hero_title', array(
+        'default' => __('Welcome to my world of travel and food', 'travelling-cooks'),
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('hero_title', array(
+        'label' => __('Hero Title', 'travelling-cooks'),
+        'section' => 'hero_section',
+        'settings' => 'hero_title',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('hero_subtitle', array(
+        'default' => __('..where I navigate this exciting chapter of my life in my fabulous 50ish ++', 'travelling-cooks'),
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('hero_subtitle', array(
+        'label' => __('Hero Subtitle', 'travelling-cooks'),
+        'section' => 'hero_section',
+        'settings' => 'hero_subtitle',
+        'type' => 'text',
+    ));
+
+    // Footer Social Media Links Section
+    $wp_customize->add_section('footer_social_links', array(
+        'title' => __('Footer Social Links', 'travelling-cooks'),
+        'priority' => 40,
+    ));
+
+    $social_links = ['facebook', 'twitter', 'instagram'];
+    foreach ($social_links as $social) {
+        $wp_customize->add_setting("footer_{$social}_link", array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+
+        $wp_customize->add_control("footer_{$social}_link", array(
+            'label' => ucfirst($social) . ' URL',
+            'section' => 'footer_social_links',
+            'type' => 'url',
+        ));
+    }
+
+    // Blog Layout Section
+    $wp_customize->add_section('blog_layout', array(
+        'title' => __('Blog Layout', 'travelling-cooks'),
+        'priority' => 50,
+    ));
+
+    $wp_customize->add_setting('blog_layout_style', array(
+        'default' => 'grid',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('blog_layout_style', array(
+        'label' => __('Blog Layout Style', 'travelling-cooks'),
+        'section' => 'blog_layout',
+        'type' => 'radio',
+        'choices' => array(
+            'grid' => __('Grid', 'travelling-cooks'),
+            'list' => __('List', 'travelling-cooks'),
+        ),
+    ));
+
+    // Homepage Sections
+    $wp_customize->add_section('homepage_sections', array(
+        'title' => __('Homepage Sections', 'travelling-cooks'),
+        'priority' => 60,
+    ));
+
+    $wp_customize->add_setting('homepage_sections_order', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('homepage_sections_order', array(
+        'label' => __('Homepage Sections Order (comma-separated)', 'travelling-cooks'),
+        'section' => 'homepage_sections',
+        'type' => 'text',
+        'description' => __('Example: hero,about,services,contact', 'travelling-cooks'),
+    ));
+
+    // Blog Post Custom Fields Section
+    $wp_customize->add_section('blog_post_custom_fields', array(
+        'title' => __('Blog Post Custom Fields', 'travelling-cooks'),
+        'priority' => 70,
+    ));
+
+    // Add a custom field for "Author Bio"
+    $wp_customize->add_setting('blog_author_bio', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+
+    $wp_customize->add_control('blog_author_bio', array(
+        'label' => __('Author Bio', 'travelling-cooks'),
+        'section' => 'blog_post_custom_fields',
+        'type' => 'textarea',
+    ));
+
+    // Add a custom field for "Featured Quote"
+    $wp_customize->add_setting('blog_featured_quote', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('blog_featured_quote', array(
+        'label' => __('Featured Quote', 'travelling-cooks'),
+        'section' => 'blog_post_custom_fields',
+        'type' => 'text',
+    ));
+}
+
+add_action('customize_register', 'travelling_cooks_customize_register');
+
