@@ -590,10 +590,6 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}.space-y-3 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }.space-y-4 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
@@ -614,8 +610,6 @@ video {
   border-width: 1px;
 }.border-b{
   border-bottom-width: 1px;
-}.border-t{
-  border-top-width: 1px;
 }.border-gray-200{
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
@@ -703,8 +697,6 @@ video {
 }.py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
-}.pt-6{
-  padding-top: 1.5rem;
 }.text-left{
   text-align: left;
 }.text-center{
@@ -1356,38 +1348,20 @@ video {
     align-items: center;
 }.page-numbers {
     padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
     border-radius: 0.5rem;
-    color: #4B5563;
+    color: #666;
+    background-color: white;
     font-family: 'DM Sans', sans-serif;
-    transition: all 0.2s;
+    transition: all 0.3s ease;
 }.page-numbers.current {
-    background-color: #F87171;
+    background-color: #E4A79D; /* mutedPink */
     color: white;
 }.page-numbers:hover:not(.current) {
-    background-color: #F87171;
+    background-color: #E4A79D;
     color: white;
-}.navigation.pagination .page-numbers {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 2.5rem;
-    height: 2.5rem;
-    padding: 0 0.75rem;
-    border-radius: 0.5rem;
-    font-family: 'DM Sans', sans-serif;
-    color: #4B5563;
-    transition: all 0.2s;
-}.navigation.pagination .page-numbers.current {
-    background-color: #F87171;
-    color: white;
-}.navigation.pagination .page-numbers:hover:not(.current) {
-    background-color: #F87171;
-    color: white;
-}.navigation.pagination .dots {
-    padding: 0 0.5rem;
-}.navigation.pagination .prev,
-.navigation.pagination .next {
-    font-size: 1rem;
+}.page-numbers.dots {
+    background: none;
 }@font-face {
     font-family: 'Recoleta';
     src: url(../fonts/Recoleta-RegularDEMO.otf?fd9bfd35d1085b5c6511b5af3adaf4ba) format('opentype');
