@@ -180,7 +180,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkTravelling_Cooks_Theme"] = self["webpackChunkTravelling_Cooks_Theme"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunktravelling_cooks_theme"] = self["webpackChunktravelling_cooks_theme"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();

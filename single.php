@@ -125,7 +125,7 @@
                 if ($location || $duration || $best_season || $cost_rating || $highlights) : ?>
                     <div class="bg-offWhite shadow-md rounded-lg p-6 mb-8">
                         <!-- Quick Info Grid -->
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 <?php echo $highlights ? 'mb-8' : ''; ?>">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                             <?php if ($location) : ?>
                                 <div class="flex items-start space-x-3">
                                     <div class="flex-shrink-0">
@@ -192,22 +192,25 @@
                         </div>
 
                         <?php if ($highlights) : ?>
-                            <div class="border-t border-gray-200 pt-6">
-                                <h3 class="text-2xl font-recoleta text-darkBrown mb-4">Trip Highlights</h3>
-                                <div class="space-y-3">
-                                    <?php 
-                                    $highlights_array = explode("\n", $highlights);
-                                    foreach ($highlights_array as $highlight) :
-                                        if (trim($highlight)) : ?>
-                                            <div class="flex items-start space-x-3">
-                                                <span class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-mutedPink mt-2"></span>
-                                                <p class="flex-1 font-dmsans text-slateGray"><?php echo esc_html(trim($highlight)); ?></p>
-                                            </div>
-                                        <?php endif;
-                                    endforeach; ?>
-                                </div>
-                            </div>
-                        <?php endif; ?>
+                    </div> <!-- closes the 4-column card -->
+
+                    <!-- Separate Highlights Card -->
+                    <div class="bg-offWhite shadow-md rounded-lg p-6 mb-8">
+                        <h3 class="text-2xl font-recoleta text-darkBrown mb-4">Trip Highlights</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+                            <?php 
+                            $highlights_array = explode("\n", $highlights);
+                            foreach ($highlights_array as $highlight) :
+                                if (trim($highlight)) : ?>
+                                    <div class="flex items-start space-x-3">
+                                        <span class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-mutedPink mt-2"></span>
+                                        <p class="flex-1 font-dmsans text-slateGray"><?php echo esc_html(trim($highlight)); ?></p>
+                                    </div>
+                                <?php endif;
+                            endforeach; ?>
+                        </div>
+                    </div>
+                    <?php endif; ?>
                     </div>
                 <?php endif;
 

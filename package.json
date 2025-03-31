@@ -1,15 +1,15 @@
 {
-	"name": "Travelling Cooks Theme",
-	"version": "3.4.0",
-	"description": "Boilerplate WordPress theme with Tailwind CSS.",
-	"author": "Jeffrey van Rossum",
+	"name": "travelling-cooks-theme",
+	"version": "1.0.0",
+	"description": "A custom theme for travel and food blogs.",
+	"author": "Allioli - Web App Studio",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/jeffreyvr/tailpress"
 	},
 	"theme_uri": "https://github.com/jeffreyvr/tailpress",
-	"author_uri": "https://vanrossum.dev",
-	"text_domain": "tailpress",
+	"author_uri": "https://allio.li",
+	"text_domain": "travellingcooks",
 	"license": "MIT",
 	"scripts": {
 		"dev": "mix",
