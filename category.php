@@ -111,9 +111,37 @@
                     </div>
                 <?php endif; ?>
                 <div class="p-6">
+                    <!-- Category chips -->
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <?php
+                        $categories = get_the_category();
+                        foreach ($categories as $category) :
+                            if ($category->parent != 0) : // Only show subcategories
+                        ?>
+                            <span class="inline-block px-2 py-1 text-xs font-dmsans bg-mutedPink bg-opacity-10 text-mutedPink rounded">
+                                <?php echo esc_html($category->name); ?>
+                            </span>
+                        <?php 
+                            endif;
+                        endforeach; 
+                        ?>
+                    </div>
+
                     <h2 class="text-2xl font-recoleta text-darkBrown mb-2">
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h2>
+                    
+                    <!-- Reading time estimate -->
+                    <p class="text-sm text-slateGray mb-3">
+                        <i class="fas fa-clock mr-1"></i>
+                        <?php 
+                        $content = get_the_content();
+                        $word_count = str_word_count(strip_tags($content));
+                        $reading_time = ceil($word_count / 200); // Assuming 200 words per minute
+                        echo sprintf(_n('%d min read', '%d min read', $reading_time, 'travelling-cooks'), $reading_time);
+                        ?>
+                    </p>
+
                     <p class="text-slateGray font-dmsans mb-4"><?php echo get_the_excerpt(); ?></p>
                     <a href="<?php the_permalink(); ?>" class="inline-block bg-mutedPink text-white font-dmsans py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors">Read More</a>
                 </div>

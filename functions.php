@@ -321,5 +321,8 @@ function travelling_cooks_customize_register($wp_customize) {
 add_action('customize_register', 'travelling_cooks_customize_register');
 
 // Include post meta functionality
-require get_template_directory() . '/inc/post-meta.php';
+require get_template_directory() . '/inc/meta-styles.php';
+require get_template_directory() . '/inc/recipe-meta.php';
+require get_template_directory() . '/inc/travel-meta.php';
+require get_template_directory() . '/inc/review-meta.php';
 
