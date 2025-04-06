@@ -2,9 +2,9 @@
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Logo & Social Links -->
         <div class="flex flex-col gap-4">
-        <a href="<?php echo home_url(); ?>" class="flex items-center gap-2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TC logo.png" alt="Footer Logo" class="w-10 h-10">
-                <span class="text-2xl font-bold font-buffalo text-mutedPink">Travelling Cooks</span>
+        <a href="<?php echo home_url(); ?>" class="flex items-center gap-2 -mx-2">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/travelling-cooks-logo.svg'" alt="Footer Logo" class="w-10 h-10">
+                <span class="-ml-2 text-2xl font-bold font-buffalo text-mutedPink">Travelling Cooks</span>
             </a>
             <div class="flex gap-4">
                 <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
@@ -22,14 +22,12 @@
         <!-- Quick Links -->
         <div>
             <h4 class="text-lg font-bold font-recoleta mb-4">Quick Links</h4>
-            <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'footer',
-                    'menu_class' => 'space-y-2',
-                    'container' => false,
-                    'fallback_cb' => false,
-                ));
-            ?>
+            <?php wp_nav_menu([
+                'theme_location' => 'footer',
+                'menu_class' => 'space-y-2',
+                'container' => false,
+                'fallback_cb' => false,
+            ]); ?>
         </div>
 
         <!-- Follow Us -->
@@ -60,7 +58,9 @@
 <div class="bg-gray-100 py-4">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-600">
         <div>
-            &copy; <?php echo date('Y'); ?> Travelling Cooks. All rights reserved.
+            &copy; <?php echo date(
+                'Y'
+            ); ?> Travelling Cooks. All rights reserved.
         </div>
         <div class="flex gap-4 mt-2 sm:mt-0">
             <a href="/privacy-policy" class="hover:text-mutedPink">Privacy Policy</a>

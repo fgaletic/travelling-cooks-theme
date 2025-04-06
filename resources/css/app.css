@@ -1,8 +1,8 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-@import "custom.css";
+@import 'custom.css';
 
 @font-face {
     font-family: 'Recoleta';
@@ -10,7 +10,7 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-};
+}
 
 @font-face {
     font-family: 'Buffalo';
@@ -18,4 +18,4 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-};
+}

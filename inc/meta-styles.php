@@ -1,6 +1,7 @@
 <?php
 
-function tc_output_meta_styles() {
+function tc_output_meta_styles()
+{
     ?>
     <style>
         .tc-meta-box {

@@ -14,14 +14,16 @@
 <header class="bg-white shadow-md w-full">
 <div class="header-container flex items-center justify-between px-6 py-4 relative w-full">
         <!-- Logo -->
-        <a href="<?php echo home_url(); ?>" class="flex items-center space-x-3">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TC Logo.png" 
-                alt="Travelling Cooks Logo" 
-                class="w-16 h-16 md:w-32 md:h-32 flex-shrink-0">
-            <span class="text-[64px] md:text-[84px] font-buffalo leading-none text-center tracking-[-0.02em] text-mutedPink">
-                Travelling Cooks
-            </span>
-        </a>
+        <a href="<?php echo home_url(); ?>" class="flex items-center">
+        <img 
+            src="<?php echo get_template_directory_uri(); ?>/assets/images/travelling-cooks-logo.svg'" 
+            alt="Travelling Cooks Logo" 
+            class="w-16 h-16 md:w-32 md:h-32 flex-shrink-0"
+        >
+        <span class="-ml-5 text-[64px] md:text-[84px] font-buffalo leading-none text-center tracking-[-0.02em] text-mutedPink">
+            Travelling Cooks
+        </span>
+    </a>
 
         <!-- Mobile Menu Toggle Button -->
         <button id="primary-menu-toggle" class="text-gray-800 focus:outline-none absolute right-4 top-4 md:hidden z-50">
@@ -32,27 +34,23 @@
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:block text-darkBrown">
-            <?php
-            wp_nav_menu(array(
+            <?php wp_nav_menu([
                 'theme_location' => 'primary',
                 'container' => false,
                 'menu_class' => 'nav-menu flex space-x-6',
-                'fallback_cb' => false
-            ));
-            ?>
+                'fallback_cb' => false,
+            ]); ?>
         </nav>
     </div>
 
     <!-- Mobile Navigation (Hidden by Default) -->
     <div id="mobile-menu" class="hidden md:hidden font-dmsans absolute top-16 left-0 w-full bg-white shadow-md p-6 z-40">
-        <?php
-        wp_nav_menu(array(
+        <?php wp_nav_menu([
             'theme_location' => 'primary',
             'container' => false,
             'menu_class' => 'flex flex-col space-y-4 text-lg',
-            'fallback_cb' => false
-        ));
-        ?>
+            'fallback_cb' => false,
+        ]); ?>
     </div>
 </header>
 

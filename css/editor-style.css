@@ -40,6 +40,9 @@
 .visible {
     visibility: visible
 }
+.static {
+    position: static
+}
 .fixed {
     position: fixed
 }
@@ -94,6 +97,10 @@
 .m-8 {
     margin: 2rem
 }
+.-mx-2 {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem
+}
 .mx-2 {
     margin-left: 0.5rem;
     margin-right: 0.5rem
@@ -110,11 +117,20 @@
     margin-top: 2rem;
     margin-bottom: 2rem
 }
+.-ml-2 {
+    margin-left: -0.5rem
+}
+.-ml-5 {
+    margin-left: -1.25rem
+}
 .mb-1 {
     margin-bottom: 0.25rem
 }
 .mb-12 {
     margin-bottom: 3rem
+}
+.mb-16 {
+    margin-bottom: 4rem
 }
 .mb-2 {
     margin-bottom: 0.5rem
@@ -152,15 +168,6 @@
 .mt-8 {
     margin-top: 2rem
 }
-.mt-3 {
-    margin-top: 0.75rem
-}
-.ml-auto {
-    margin-left: auto
-}
-.mb-16 {
-    margin-bottom: 4rem
-}
 .block {
     display: block
 }
@@ -187,9 +194,6 @@
 }
 .h-16 {
     height: 4rem
-}
-.h-48 {
-    height: 12rem
 }
 .h-6 {
     height: 1.5rem
@@ -223,6 +227,9 @@
 }
 .min-h-screen {
     min-height: 100vh
+}
+.min-h-\[40vh\] {
+    min-height: 40vh
 }
 .w-1 {
     width: 0.25rem
@@ -325,6 +332,9 @@
 .gap-2 {
     gap: 0.5rem
 }
+.gap-3 {
+    gap: 0.75rem
+}
 .gap-4 {
     gap: 1rem
 }
@@ -333,9 +343,6 @@
 }
 .gap-8 {
     gap: 2rem
-}
-.gap-3 {
-    gap: 0.75rem
 }
 .gap-x-8 {
     -moz-column-gap: 2rem;
@@ -348,6 +355,11 @@
     --tw-space-x-reverse: 0;
     margin-right: calc(0.75rem * var(--tw-space-x-reverse));
     margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)))
 }
 .space-x-6 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
@@ -368,11 +380,6 @@
     --tw-space-y-reverse: 0;
     margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(1rem * var(--tw-space-y-reverse))
-}
-.space-x-4 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1rem * var(--tw-space-x-reverse));
-    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)))
 }
 .self-start {
     align-self: flex-start
@@ -437,14 +444,6 @@
 .bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity))
-}
-.bg-gray-50 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(249 250 251 / var(--tw-bg-opacity))
-}
-.bg-red-100 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(254 226 226 / var(--tw-bg-opacity))
 }
 .bg-opacity-10 {
     --tw-bg-opacity: 0.1
@@ -620,9 +619,9 @@
     --tw-text-opacity: 1;
     color: rgb(68 49 43 / var(--tw-text-opacity))
 }
-.text-gray-500 {
+.text-gray-300 {
     --tw-text-opacity: 1;
-    color: rgb(107 114 128 / var(--tw-text-opacity))
+    color: rgb(209 213 219 / var(--tw-text-opacity))
 }
 .text-gray-600 {
     --tw-text-opacity: 1;
@@ -648,9 +647,8 @@
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity))
 }
-.text-gray-300 {
-    --tw-text-opacity: 1;
-    color: rgb(209 213 219 / var(--tw-text-opacity))
+.underline {
+    text-decoration-line: underline
 }
 .antialiased {
     -webkit-font-smoothing: antialiased;
@@ -658,6 +656,11 @@
 }
 .opacity-70 {
     opacity: 0.7
+}
+.shadow {
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 .shadow-lg {
     --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -754,10 +757,10 @@ body {
 .wp-block {
     max-width: 1280px
 }
-.wp-block[data-align=wide] {
+.wp-block[data-align='wide'] {
     max-width: 1280px
 }
-.wp-block[data-align=full] {
+.wp-block[data-align='full'] {
     max-width: 100%
 }
 .hover\:scale-105:hover {
@@ -782,10 +785,6 @@ body {
 .hover\:text-mutedPink:hover {
     --tw-text-opacity: 1;
     color: rgb(211 158 138 / var(--tw-text-opacity))
-}
-.hover\:text-orange-600:hover {
-    --tw-text-opacity: 1;
-    color: rgb(234 88 12 / var(--tw-text-opacity))
 }
 .hover\:underline:hover {
     text-decoration-line: underline
@@ -887,8 +886,5 @@ body {
     .lg\:grid-cols-4 {
         grid-template-columns: repeat(4, minmax(0, 1fr))
     }
-    .lg\:text-5xl {
-        font-size: 3rem;
-        line-height: 1
-    }
 }
+

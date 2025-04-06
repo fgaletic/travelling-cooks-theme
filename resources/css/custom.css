@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
-html, body {
+html,
+body {
     max-width: 100%;
     width: 100%;
     overflow-x: hidden;
@@ -75,7 +76,8 @@ header nav .nav-menu {
 }
 
 /* Typography and Link Styling */
-.entry-content h1, .hero-section h1 {
+.entry-content h1,
+.hero-section h1 {
     @apply text-2xl font-recoleta font-bold;
 }
 
@@ -94,7 +96,31 @@ header nav .nav-menu {
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: 5rem; 
+    padding-top: 5rem;
+}
+
+/* Intro Section with Background Watermark */
+.intro-with-bg {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.intro-with-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('/wp-content/themes/travelling-cooks-theme/assets/images/travelling-cooks-logo.svg');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2; 
+    z-index: 0;
+}
+
+.intro-with-bg > * {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-section h1 {
@@ -221,7 +247,7 @@ footer button {
 .home .latest-posts .image-container {
     display: flex;
     justify-content: center; /* Horizontally center the image */
-    align-items: center;     /* Vertically center the image */
+    align-items: center; /* Vertically center the image */
     margin-bottom: 1rem;
 }
 
@@ -253,8 +279,8 @@ footer button {
 }
 
 /* Safari Fix for Flip Card */
-@media not all and (min-resolution:.001dpcm) { 
-    @supports (-webkit-appearance:none) {
+@media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
         .flip-card-back {
             transform: rotateY(180deg) translateZ(1px);
         }
@@ -279,7 +305,7 @@ footer button {
 
 img.object-cover {
     object-fit: cover;
-    font-family: "object-fit: cover"; /* IE11 fallback */
+    font-family: 'object-fit: cover'; /* IE11 fallback */
 }
 
 /* Pagination Styles */
@@ -306,15 +332,49 @@ img.object-cover {
 }
 
 .page-numbers.current {
-    background-color: #E4A79D; /* mutedPink */
+    background-color: #e4a79d; /* mutedPink */
     color: white;
 }
 
 .page-numbers:hover:not(.current) {
-    background-color: #E4A79D;
+    background-color: #e4a79d;
     color: white;
 }
 
 .page-numbers.dots {
     background: none;
 }
+
+.breadcrumbs a {
+    color: #d16d82; /* Muted pink */
+    text-decoration: none;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+.breadcrumbs span {
+    color: #6b7280; /* Slate gray */
+}
+
+/* Desktop Navigation Hover Effects */
+.nav-menu a {
+    @apply text-darkBrown transition-all duration-200 px-3 py-1 rounded-lg;
+}
+
+.nav-menu a:hover {
+    background-color: #fbeae7; /* Light muted pink background */
+    color: #e4a79d; /* Muted pink text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the chip effect */
+}
+
+/* Mobile Navigation Hover Effects */
+#mobile-menu a {
+    @apply text-darkBrown transition-all duration-200 px-3 py-1 rounded-lg;
+}
+
+#mobile-menu a:hover {
+    background-color: #fbeae7; /* Light muted pink background */
+    color: #e4a79d; /* Muted pink text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the chip effect */
+}
+

@@ -1,5 +1,5 @@
 const theme = require('./theme.json');
-const tailpress = require("@jeffreyvr/tailwindcss-tailpress");
+const tailpress = require('@jeffreyvr/tailwindcss-tailpress');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -8,19 +8,21 @@ module.exports = {
         './**/*.php',
         './resources/css/*.css',
         './resources/js/*.js',
-        './safelist.txt'
+        './safelist.txt',
     ],
     theme: {
         container: {
             padding: {
                 DEFAULT: '1rem',
                 sm: '2rem',
-                lg: '0rem'
+                lg: '0rem',
             },
         },
         extend: {
             colors: {
-                ...tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)), // Keep TailPress colors
+                ...tailpress.colorMapper(
+                    tailpress.theme('settings.color.palette', theme),
+                ), // Keep TailPress colors
                 mutedPink: '#d39e8a', // Soft muted pink
                 darkBrown: '#44312b', // Dark brown for text
                 slateGray: '#73868c', // Slate gray for details
@@ -35,7 +37,9 @@ module.exports = {
                 lg: '8px', // Keep rounded styling
             },
             fontSize: {
-                ...tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme)) // Keep TailPress font sizes
+                ...tailpress.fontSizeMapper(
+                    tailpress.theme('settings.typography.fontSizes', theme),
+                ), // Keep TailPress font sizes
             },
             animation: {
                 'fade-in': 'fadeIn 0.3s ease-in-out',
@@ -53,15 +57,13 @@ module.exports = {
             },
         },
         screens: {
-            'xs': '480px',
-            'sm': '600px',
-            'md': '700px',
-            'lg': tailpress.theme('settings.layout.contentSize', theme),
-            'xl': tailpress.theme('settings.layout.wideSize', theme),
-            '2xl': '1440px'
-        }
+            xs: '480px',
+            sm: '600px',
+            md: '700px',
+            lg: tailpress.theme('settings.layout.contentSize', theme),
+            xl: tailpress.theme('settings.layout.wideSize', theme),
+            '2xl': '1440px',
+        },
     },
-    plugins: [
-        tailpress.tailwind
-    ]
+    plugins: [tailpress.tailwind],
 };

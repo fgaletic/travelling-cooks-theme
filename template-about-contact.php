@@ -2,12 +2,11 @@
 /*
 Template Name: About/Contact Page
 */
-get_header();
-?>
+get_header(); ?>
 
 <main class="container mx-auto px-4 py-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-        <?php if (is_page('contact-us')) : ?>
+        <?php if (is_page('contact-us')): ?>
             <!-- Contact Us: Title & placeholder text on left, Form on right -->
             <div class="prose prose-lg max-w-none font-dmsans text-darkBrown leading-relaxed">
                 <h1 class="text-4xl font-recoleta text-darkBrown mb-4">Contact Us</h1>
@@ -32,11 +31,13 @@ get_header();
                     <button type="submit" class="bg-mutedPink text-white font-dmsans py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors">Send Message</button>
                 </form>
             </div>
-        <?php else : ?>
+        <?php else: ?>
             <!-- About Us Page: Image on Left, Text on Right -->
             <div class="rounded-lg overflow-hidden shadow-lg self-start">
-                <?php if (has_post_thumbnail()) : ?>
-                    <img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>" class="w-full h-auto object-cover">
+                <?php if (has_post_thumbnail()): ?>
+                    <img src="<?php the_post_thumbnail_url(
+                        'large'
+                    ); ?>" alt="<?php the_title(); ?>" class="w-full h-auto object-cover">
                 <?php endif; ?>
             </div>
             <div class="prose prose-lg max-w-none font-dmsans text-darkBrown leading-relaxed self-start">

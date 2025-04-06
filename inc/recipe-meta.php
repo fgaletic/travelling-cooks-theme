@@ -1,6 +1,7 @@
 <?php
 
-function tc_add_recipe_meta_boxes() {
+function tc_add_recipe_meta_boxes()
+{
     if (has_category('recipes')) {
         add_meta_box(
             'tc_recipe_meta',
@@ -14,9 +15,10 @@ function tc_add_recipe_meta_boxes() {
 }
 add_action('add_meta_boxes', 'tc_add_recipe_meta_boxes');
 
-function tc_recipe_meta_callback($post) {
+function tc_recipe_meta_callback($post)
+{
     wp_nonce_field('tc_recipe_meta_nonce', 'tc_recipe_meta_nonce');
-    
+
     // Get all meta values
     $fields = [
         'subtitle' => get_post_meta($post->ID, '_tc_post_subtitle', true),
@@ -27,12 +29,11 @@ function tc_recipe_meta_callback($post) {
         'cuisine' => get_post_meta($post->ID, '_tc_cuisine', true),
         'calories' => get_post_meta($post->ID, '_tc_calories', true),
         'ingredients' => get_post_meta($post->ID, '_tc_ingredients', true),
-        'tips' => get_post_meta($post->ID, '_tc_tips', true)
+        'tips' => get_post_meta($post->ID, '_tc_tips', true),
     ];
 
     // Output shared styles
     tc_output_meta_styles();
-    
     ?>
     <div class="tc-meta-box">
         <div class="tc-meta-grid">
@@ -82,31 +83,47 @@ function tc_recipe_meta_callback($post) {
                 <label for="tc_difficulty">Difficulty Level</label>
                 <select id="tc_difficulty" name="tc_difficulty">
                     <option value="">Select Difficulty</option>
-                    <option value="easy" <?php selected($fields['difficulty'], 'easy'); ?>>Easy</option>
-                    <option value="medium" <?php selected($fields['difficulty'], 'medium'); ?>>Medium</option>
-                    <option value="hard" <?php selected($fields['difficulty'], 'hard'); ?>>Hard</option>
+                    <option value="easy" <?php selected(
+                        $fields['difficulty'],
+                        'easy'
+                    ); ?>>Easy</option>
+                    <option value="medium" <?php selected(
+                        $fields['difficulty'],
+                        'medium'
+                    ); ?>>Medium</option>
+                    <option value="hard" <?php selected(
+                        $fields['difficulty'],
+                        'hard'
+                    ); ?>>Hard</option>
                 </select>
             </div>
 
             <div class="tc-meta-field tc-meta-full">
                 <label for="tc_ingredients">Ingredients List</label>
                 <textarea id="tc_ingredients" name="tc_ingredients" class="tc-meta-textarea" 
-                    placeholder="Enter ingredients, one per line"><?php echo esc_textarea($fields['ingredients']); ?></textarea>
+                    placeholder="Enter ingredients, one per line"><?php echo esc_textarea(
+                        $fields['ingredients']
+                    ); ?></textarea>
             </div>
 
             <div class="tc-meta-field tc-meta-full">
                 <label for="tc_tips">Cooking Tips & Notes</label>
                 <textarea id="tc_tips" name="tc_tips" class="tc-meta-textarea" 
-                    placeholder="Add any helpful tips or notes about the recipe"><?php echo esc_textarea($fields['tips']); ?></textarea>
+                    placeholder="Add any helpful tips or notes about the recipe"><?php echo esc_textarea(
+                        $fields['tips']
+                    ); ?></textarea>
             </div>
         </div>
     </div>
     <?php
 }
 
-function tc_save_recipe_meta($post_id) {
-    if (!isset($_POST['tc_recipe_meta_nonce']) || 
-        !wp_verify_nonce($_POST['tc_recipe_meta_nonce'], 'tc_recipe_meta_nonce')) {
+function tc_save_recipe_meta($post_id)
+{
+    if (
+        !isset($_POST['tc_recipe_meta_nonce']) ||
+        !wp_verify_nonce($_POST['tc_recipe_meta_nonce'], 'tc_recipe_meta_nonce')
+    ) {
         return;
     }
 
@@ -127,15 +144,23 @@ function tc_save_recipe_meta($post_id) {
         'tc_cuisine',
         'tc_calories',
         'tc_ingredients',
-        'tc_tips'
+        'tc_tips',
     ];
 
     foreach ($fields as $field) {
         if (isset($_POST[$field])) {
             if (in_array($field, ['tc_ingredients', 'tc_tips'])) {
-                update_post_meta($post_id, '_' . $field, sanitize_textarea_field($_POST[$field]));
+                update_post_meta(
+                    $post_id,
+                    '_' . $field,
+                    sanitize_textarea_field($_POST[$field])
+                );
             } else {
-                update_post_meta($post_id, '_' . $field, sanitize_text_field($_POST[$field]));
+                update_post_meta(
+                    $post_id,
+                    '_' . $field,
+                    sanitize_text_field($_POST[$field])
+                );
             }
         }
     }

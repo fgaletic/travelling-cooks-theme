@@ -1,6 +1,7 @@
 <?php
 
-function add_review_meta_boxes() {
+function add_review_meta_boxes()
+{
     add_meta_box(
         'review_details',
         'Review Details',
@@ -12,11 +13,16 @@ function add_review_meta_boxes() {
 }
 add_action('add_meta_boxes', 'add_review_meta_boxes');
 
-function render_review_meta_box($post) {
+function render_review_meta_box($post)
+{
     // Get existing values
     $rating = get_post_meta($post->ID, '_tc_rating', true);
     $price = get_post_meta($post->ID, '_tc_price', true);
-    $affiliate_link = get_post_meta($post->ID, '_tc_affiliate_link_amazon', true);
+    $affiliate_link = get_post_meta(
+        $post->ID,
+        '_tc_affiliate_link_amazon',
+        true
+    );
     $featured_review = get_post_meta($post->ID, '_tc_featured_review', true);
     $quick_note = get_post_meta($post->ID, '_tc_quick_note', true);
     $short_title = get_post_meta($post->ID, '_tc_short_title', true); // Add this line
@@ -61,7 +67,9 @@ function render_review_meta_box($post) {
         <p>
             <label for="quick_note">Quick Note (for featured reviews):</label>
             <textarea id="quick_note" name="_tc_quick_note" 
-                      rows="2" style="width: 100%;"><?php echo esc_textarea($quick_note); ?></textarea>
+                      rows="2" style="width: 100%;"><?php echo esc_textarea(
+                          $quick_note
+                      ); ?></textarea>
         </p>
     </div>
     <style>
@@ -74,10 +82,13 @@ function render_review_meta_box($post) {
     <?php
 }
 
-function save_review_meta($post_id) {
+function save_review_meta($post_id)
+{
     // Security checks
-    if (!isset($_POST['review_meta_box_nonce']) || 
-        !wp_verify_nonce($_POST['review_meta_box_nonce'], 'review_meta_box')) {
+    if (
+        !isset($_POST['review_meta_box_nonce']) ||
+        !wp_verify_nonce($_POST['review_meta_box_nonce'], 'review_meta_box')
+    ) {
         return;
     }
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
@@ -93,13 +104,17 @@ function save_review_meta($post_id) {
         '_tc_affiliate_link_amazon' => 'esc_url_raw',
         '_tc_featured_review' => 'intval',
         '_tc_quick_note' => 'sanitize_textarea_field',
-        '_tc_short_title' => 'sanitize_text_field' // Add this line
+        '_tc_short_title' => 'sanitize_text_field', // Add this line
     ];
 
     foreach ($fields as $field => $sanitize_callback) {
         if (isset($_POST[$field])) {
-            update_post_meta($post_id, $field, $sanitize_callback($_POST[$field]));
-        } else if ($field === '_tc_featured_review') {
+            update_post_meta(
+                $post_id,
+                $field,
+                $sanitize_callback($_POST[$field])
+            );
+        } elseif ($field === '_tc_featured_review') {
             delete_post_meta($post_id, $field);
         }
     }
