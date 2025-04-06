@@ -93,7 +93,89 @@
             ?>
         </div>
 
-        <h2 class="text-3xl font-recoleta text-darkBrown mb-8">All <?php echo $category->name; ?></h2>
+    <?php if (is_category('reviews')) : 
+        // Get featured reviews
+        $featured_reviews = get_posts([
+            'category_name' => 'reviews',
+            'meta_key' => '_tc_featured_review',
+            'meta_value' => '1',
+            'posts_per_page' => 5
+        ]);
+
+        if (!empty($featured_reviews)) : ?>
+            <section class="mb-16">
+                <h2 class="text-3xl font-recoleta text-darkBrown mb-6">Top Recommendations</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <?php foreach ($featured_reviews as $post) : setup_postdata($post);
+                        $rating = get_post_meta($post->ID, '_tc_rating', true);
+                        $price = get_post_meta($post->ID, '_tc_price', true);
+                        $quick_note = get_post_meta($post->ID, '_tc_quick_note', true);
+                        $affiliate_link = get_post_meta($post->ID, '_tc_affiliate_link_amazon', true);
+                    ?>
+                        <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <div class="aspect-w-3 aspect-h-2 overflow-hidden">
+                                    <?php the_post_thumbnail('card-thumbnail', [
+                                        'class' => 'w-full h-full object-cover rounded-lg',
+                                        'loading' => 'lazy'
+                                    ]); ?>
+                                </div>
+                            <?php endif; ?>
+                            
+                            <div class="p-6">
+                                <!-- Rating and Price -->
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex text-mutedPink">
+                                        <?php for ($i = 1; $i <= 5; $i++) : ?>
+                                            <span class="<?php echo $i <= $rating ? 'text-mutedPink' : 'text-gray-300'; ?>">★</span>
+                                        <?php endfor; ?>
+                                    </div>
+                                    <?php if ($price) : ?>
+                                        <span class="text-slateGray font-medium"><?php echo esc_html($price); ?></span>
+                                    <?php endif; ?>
+                                </div>
+
+                                <h3 class="text-xl font-recoleta text-darkBrown mb-2">
+                                    <?php 
+                                    $short_title = get_post_meta($post->ID, '_tc_short_title', true);
+                                    if ($short_title) {
+                                        echo esc_html($short_title);
+                                    } else {
+                                        the_title();
+                                    } 
+                                    ?>
+                                </h3>
+
+                                <?php if ($quick_note) : ?>
+                                    <p class="text-sm text-mutedPink italic mb-4"><?php echo esc_html($quick_note); ?></p>
+                                <?php endif; ?>
+
+                                <div class="flex gap-3">
+                                    <a href="<?php the_permalink(); ?>" 
+                                       class="inline-block px-4 py-2 bg-mutedPink bg-opacity-10 text-mutedPink rounded-lg hover:bg-opacity-20 transition-colors">
+                                        Read Review
+                                    </a>
+                                    <?php if ($affiliate_link) : ?>
+                                        <a href="<?php echo esc_url($affiliate_link); ?>" 
+                                           target="_blank" 
+                                           rel="nofollow sponsored" 
+                                           class="inline-block px-4 py-2 bg-mutedPink text-white rounded-lg hover:bg-opacity-90 transition-colors">
+                                            Check Price
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </article>
+                    <?php 
+                    endforeach;
+                    wp_reset_postdata(); 
+                    ?>
+                </div>
+            </section>
+        <?php endif;
+    endif; ?>
+
+    <h2 class="text-3xl font-recoleta text-darkBrown mb-8">All <?php echo $category->name; ?></h2>
     <?php endif; ?>
 
     <!-- Standard Grid Layout for All Posts -->

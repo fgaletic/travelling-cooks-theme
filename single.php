@@ -323,6 +323,26 @@
             <div class="prose prose-lg max-w-none font-dmsans text-darkBrown mb-8">
                 <?php the_content(); ?>
             </div>
+
+            <!-- Author Box -->
+            <div class="bg-offWhite rounded-lg shadow-md p-6 mt-12">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <?php echo get_avatar(get_the_author_meta('ID'), 64, '', '', ['class' => 'rounded-full']); ?>
+                    </div>
+                    <div>
+                        <p class="text-darkBrown font-recoleta text-lg">
+                            Written by <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="text-mutedPink hover:underline">
+                                <?php the_author(); ?>
+                            </a>
+                        </p>
+                        <p class="text-slateGray font-dmsans text-sm mt-1">
+                            <?php echo get_the_author_meta('description') ?: 'I love travel, art (especially exhibitions in Brussels), and when I\'m not eating out, I\'m usually cooking up something delicious.'; ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </article>
     <?php endwhile; endif; ?>
 </main>

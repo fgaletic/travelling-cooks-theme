@@ -152,6 +152,15 @@
 .mt-8 {
     margin-top: 2rem
 }
+.mt-3 {
+    margin-top: 0.75rem
+}
+.ml-auto {
+    margin-left: auto
+}
+.mb-16 {
+    margin-bottom: 4rem
+}
 .block {
     display: block
 }
@@ -266,6 +275,9 @@
 .max-w-sm {
     max-width: 24rem
 }
+.max-w-4xl {
+    max-width: 56rem
+}
 .flex-1 {
     flex: 1 1 0%
 }
@@ -322,6 +334,9 @@
 .gap-8 {
     gap: 2rem
 }
+.gap-3 {
+    gap: 0.75rem
+}
 .gap-x-8 {
     -moz-column-gap: 2rem;
          column-gap: 2rem
@@ -349,15 +364,15 @@
     margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
 }
-.space-y-3 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(0.75rem * var(--tw-space-y-reverse))
-}
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(1rem * var(--tw-space-y-reverse))
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)))
 }
 .self-start {
     align-self: flex-start
@@ -382,9 +397,6 @@
 }
 .border-b {
     border-bottom-width: 1px
-}
-.border-t {
-    border-top-width: 1px
 }
 .border-gray-200 {
     --tw-border-opacity: 1;
@@ -425,6 +437,14 @@
 .bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+.bg-gray-50 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 250 251 / var(--tw-bg-opacity))
+}
+.bg-red-100 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(254 226 226 / var(--tw-bg-opacity))
 }
 .bg-opacity-10 {
     --tw-bg-opacity: 0.1
@@ -504,9 +524,6 @@
 .py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem
-}
-.pt-6 {
-    padding-top: 1.5rem
 }
 .text-left {
     text-align: left
@@ -631,6 +648,10 @@
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity))
 }
+.text-gray-300 {
+    --tw-text-opacity: 1;
+    color: rgb(209 213 219 / var(--tw-text-opacity))
+}
 .antialiased {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
@@ -752,9 +773,22 @@ body {
     --tw-bg-opacity: 1;
     background-color: rgb(234 88 12 / var(--tw-bg-opacity))
 }
+.hover\:bg-opacity-20:hover {
+    --tw-bg-opacity: 0.2
+}
+.hover\:bg-opacity-90:hover {
+    --tw-bg-opacity: 0.9
+}
 .hover\:text-mutedPink:hover {
     --tw-text-opacity: 1;
     color: rgb(211 158 138 / var(--tw-text-opacity))
+}
+.hover\:text-orange-600:hover {
+    --tw-text-opacity: 1;
+    color: rgb(234 88 12 / var(--tw-text-opacity))
+}
+.hover\:underline:hover {
+    text-decoration-line: underline
 }
 .focus\:outline-none:focus {
     outline: 2px solid transparent;
