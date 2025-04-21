@@ -3,6 +3,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('primary-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
+    const header = document.querySelector(".header");
+    const headerLinks = header.querySelectorAll("a"); // Select all <a> elements inside the header
 
     menuToggle.addEventListener('click', function () {
         mobileMenu.classList.toggle('active');
@@ -17,5 +19,24 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                                   </svg>`;
         }
+    });
+
+    function adjustBodyPadding() {
+        if (!header) return;
+        const headerHeight = header.offsetHeight;
+        document.body.style.paddingTop = `${headerHeight}px`;
+    }
+
+    window.addEventListener("load", adjustBodyPadding);
+    window.addEventListener("resize", adjustBodyPadding);
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+            headerLinks.forEach(link => link.classList.add("scrolled")); // Add scrolled to all <a>
+        } else {
+            header.classList.remove("scrolled");
+            headerLinks.forEach(link => link.classList.remove("scrolled")); // Remove scrolled from all <a>
+        }
+        adjustBodyPadding(); // Recalculate on scroll
     });
 });

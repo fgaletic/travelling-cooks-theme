@@ -196,6 +196,19 @@ function travelling_cooks_scripts()
 }
 add_action('wp_enqueue_scripts', 'travelling_cooks_scripts');
 
+function travelling_cooks_enqueue_scripts() {
+    // ...existing enqueued scripts...
+
+    wp_enqueue_script(
+        'header-scroll',
+        get_template_directory_uri() . '/js/header-scroll.js',
+        array(),
+        '1.0',
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'travelling_cooks_enqueue_scripts');
+
 // Add ACF Options Page
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page([
