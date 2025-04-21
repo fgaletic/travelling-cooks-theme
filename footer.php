@@ -46,7 +46,7 @@
             <p class="text-sm text-dmsans text-gray-600 mb-4">Stay updated with our latest travel and cooking adventures.</p>
             <form class="flex flex-col gap-4">
                 <input type="email" class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300" placeholder="Email address">
-                <button class="bg-mutedPink text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600">
+                <button class="bg-mutedPink text-white py-2 px-4 rounded-lg hover:bg-orange-600">
                     Subscribe
                 </button>
             </form>

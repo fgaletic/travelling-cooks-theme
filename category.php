@@ -10,12 +10,11 @@
     </h1>
 
     <?php if (is_category('travel')): ?>
-<section class="destinations px-6 pt-6 pb-20 min-h-[30vh]">
+<section class="destinations hidden sm:block px-6 pt-6 pb-20 min-h-[30vh]">
     <div class="max-w-screen-xl mx-auto">
         <!-- <h2 class="text-5xl font-recoleta text-center mb-6">Where to next?</h2> -->
 
         <!-- Map for larger screens -->
-        <div class="hidden sm:block">
             <div class="map-wrapper relative w-full max-w-[900px] mx-auto">
                 <div class="aspect-[2/1] w-full relative">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TC_Map.png"
@@ -40,7 +39,6 @@
                     </a>
                 </div>
             </div>
-        </div>
     </div>
 </section>
 <?php endif; ?>
@@ -123,7 +121,7 @@
                         <div class="flip-card-back absolute w-full h-full bg-white rounded-lg shadow-lg p-6">
                             <h2 class="text-2xl font-recoleta text-darkBrown mb-4"><?php the_title(); ?></h2>
                             <p class="text-slateGray font-dmsans mb-4"><?php echo get_the_excerpt(); ?></p>
-                            <a href="<?php the_permalink(); ?>" class="inline-block bg-mutedPink text-white font-dmsans py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors">
+                            <a href="<?php the_permalink(); ?>" class="inline-block bg-mutedPink text-white font-dmsans py-2 px-4 rounded-lg hover:bg-darkBrown transition-colors">
                                 Read More
                             </a>
                         </div>
@@ -302,7 +300,7 @@
                     </p>
 
                     <p class="text-slateGray font-dmsans mb-4"><?php echo get_the_excerpt(); ?></p>
-                    <a href="<?php the_permalink(); ?>" class="inline-block bg-mutedPink text-white font-dmsans py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors">Read More</a>
+                    <a href="<?php the_permalink(); ?>" class="inline-block bg-mutedPink text-white font-dmsans py-2 px-4 rounded-lg hover:bg-darkBrown transition-colors">Read More</a>
                 </div>
             </article>
         <?php

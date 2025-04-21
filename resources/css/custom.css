@@ -336,12 +336,12 @@ img.object-cover {
 }
 
 .page-numbers.current {
-    background-color: #e4a79d; /* mutedPink */
+    background-color: #d39e8a; /* mutedPink */
     color: white;
 }
 
 .page-numbers:hover:not(.current) {
-    background-color: #e4a79d;
+    background-color: #d39e8a;
     color: white;
 }
 
