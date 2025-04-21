@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="container mx-auto px-4 py-8">
+<main class="container mx-auto px-4 py-20">
     <h1 class="text-4xl font-recoleta text-darkBrown mb-8">
         <?php if (is_category()) {
             single_cat_title();
@@ -10,9 +10,9 @@
     </h1>
 
     <?php if (is_category('travel')): ?>
-<section class="destinations px-6 py-12 min-h-[30vh]">
+<section class="destinations px-6 pt-6 pb-20 min-h-[30vh]">
     <div class="max-w-screen-xl mx-auto">
-        <h2 class="text-5xl font-recoleta text-center mb-6">Where to next?</h2>
+        <!-- <h2 class="text-5xl font-recoleta text-center mb-6">Where to next?</h2> -->
 
         <!-- Map for larger screens -->
         <div class="hidden sm:block">
