@@ -9,6 +9,42 @@
         } ?>
     </h1>
 
+    <?php if (is_category('travel')): ?>
+<section class="destinations px-6 py-12 min-h-[30vh]">
+    <div class="max-w-screen-xl mx-auto">
+        <h2 class="text-5xl font-recoleta text-center mb-6">Where to next?</h2>
+
+        <!-- Map for larger screens -->
+        <div class="hidden sm:block">
+            <div class="map-wrapper relative w-full max-w-[900px] mx-auto">
+                <div class="aspect-[2/1] w-full relative">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TC_Map.png"
+                         alt="World Map"
+                         class="absolute inset-0 w-full h-full object-cover rounded-lg shadow" />
+                    
+                    <!-- PINS GO HERE -->
+                    <a href="/tag/japan" class="pin" style="top: 45%; left: 86%;" title="Japan">
+                        <span class="pin-label">Japan</span>
+                    </a>
+                    <a href="/tag/united-kingdom" class="pin" style="top: 36%; left: 46%;" title="United Kingdom">
+                        <span class="pin-label">UK</span>
+                    </a>
+                    <a href="/tag/belgium" class="pin" style="top: 38%; left: 47%;" title="Belgium">
+                        <span class="pin-label">Belgium</span>
+                    </a>
+                    <a href="/tag/italy" class="pin" style="top: 43%; left: 50%;" title="Italy">
+                        <span class="pin-label">Italy</span>
+                    </a>
+                    <a href="/tag/morocco" class="pin" style="top: 52%; left: 43%;" title="Morocco">
+                        <span class="pin-label">Morocco</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
     <?php
     // Store the initial query
     $main_query = $wp_query;
