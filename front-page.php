@@ -17,7 +17,7 @@
     </div>
 </section>
 
-<section class="latest-posts px-6 py-12">
+<section class="latest-posts px-6 py-12 pb-9">
     <div class="flex justify-center items-center">
         <h2 class="text-3xl text-slateGray font-bold font-recoleta">This Month's Featured Posts</h2>
     </div>
