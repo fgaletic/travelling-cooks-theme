@@ -44,12 +44,24 @@
         <div>
             <h4 class="text-lg font-bold font-recoleta mb-4">Newsletter</h4>
             <p class="text-sm text-dmsans text-gray-600 mb-4">Stay updated with our latest travel and cooking adventures.</p>
-            <form class="flex flex-col gap-4">
-                <input type="email" class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300" placeholder="Email address">
-                <button class="bg-mutedPink text-white py-2 px-4 rounded-lg hover:bg-orange-600">
-                    Subscribe
-                </button>
-            </form>
+
+            <?php if (class_exists('GFForms')): ?>
+                <!-- Gravity Forms Integration -->
+                <?php 
+                // To use Gravity Forms, uncomment the line below and replace "1" with your Gravity Form ID.
+                // echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]'); 
+                ?>
+                <p class="text-sm text-gray-500 italic">Gravity Forms is active. Add your form shortcode above.</p>
+            <?php else: ?>
+                <!-- Fallback Form -->
+                <form class="flex flex-col gap-4">
+                    <input type="email" class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300" placeholder="Email address">
+                    <button class="bg-mutedPink text-white py-2 px-4 rounded-lg hover:bg-orange-600">
+                        Subscribe
+                    </button>
+                </form>
+                <!-- <p class="text-sm text-gray-500 italic">Gravity Forms is not active. Using fallback form.</p> -->
+            <?php endif; ?>
         </div>
     </div>
 </footer>
