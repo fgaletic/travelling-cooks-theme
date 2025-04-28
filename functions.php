@@ -168,6 +168,10 @@ add_action('after_setup_theme', function () {
     add_image_size('hero-image', 1920, 1080, ['center', 'top']);
 });
 
+add_action('after_setup_theme', function () {
+    add_image_size('landscape', 1200, 200, true);
+});
+
 // Make custom image sizes available in WordPress admin
 add_filter('image_size_names_choose', function ($sizes) {
     return array_merge($sizes, [
