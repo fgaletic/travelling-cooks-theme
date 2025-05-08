@@ -89,6 +89,7 @@
                 );
                 $servings = get_post_meta(get_the_ID(), '_tc_servings', true);
                 $prep_time = get_post_meta(get_the_ID(), '_tc_prep_time', true);
+                $ingredients = get_post_meta(get_the_ID(), '_tc_ingredients', true);
 
                 if ($cooking_time || $difficulty || $servings || $prep_time): ?>
         <div class="bg-offWhite shadow-md rounded-lg p-6 mb-8">
@@ -105,7 +106,7 @@
                         </span>
                     </div>
                     <div>
-                        <p class="font-medium text-darkBrown">Prep Time</p>
+                        <p class="font-medium font-recoleta text-darkBrown">Prep Time</p>
                         <p class="text-slateGray"><?php echo esc_html(
                                             $prep_time
                                         ); ?></p>
@@ -125,7 +126,7 @@
                         </span>
                     </div>
                     <div>
-                        <p class="font-medium text-darkBrown">Cook Time</p>
+                        <p class="font-medium font-recoleta text-darkBrown">Cook Time</p>
                         <p class="text-slateGray"><?php echo esc_html(
                                             $cooking_time
                                         ); ?></p>
@@ -145,7 +146,7 @@
                         </span>
                     </div>
                     <div>
-                        <p class="font-medium text-darkBrown">Difficulty</p>
+                        <p class="font-medium font-recoleta text-darkBrown">Difficulty</p>
                         <p class="text-slateGray capitalize"><?php echo esc_html(
                                             $difficulty
                                         ); ?></p>
@@ -165,13 +166,35 @@
                         </span>
                     </div>
                     <div>
-                        <p class="font-medium text-darkBrown">Servings</p>
+                        <p class="font-medium font-recoleta text-darkBrown">Servings</p>
                         <p class="text-slateGray"><?php echo esc_html(
                                             $servings
                                         ); ?></p>
                     </div>
                 </div>
                 <?php endif; ?>
+            </div>
+        </div>
+        <?php endif;
+
+                if ($ingredients): ?>
+        <!-- Ingredients Block -->
+        <div class="bg-offWhite shadow-md rounded-lg p-6 mb-8">
+            <h3 class="text-2xl font-recoleta text-darkBrown mb-4">Ingredients</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+                <?php
+                $ingredients_array = explode("\n", $ingredients);
+                foreach ($ingredients_array as $ingredient):
+                    if (trim($ingredient)): ?>
+                <div class="flex items-start space-x-3">
+                    <span class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-mutedPink mt-2"></span>
+                    <p class="flex-1 font-dmsans text-slateGray"><?php echo esc_html(
+                                            trim($ingredient)
+                                        ); ?></p>
+                </div>
+                <?php endif;
+                endforeach;
+                ?>
             </div>
         </div>
         <?php endif;
