@@ -2,19 +2,17 @@
 
 <div class="container mx-auto my-8">
 
-	<?php if ( have_posts() ) : ?>
+	<?php if (have_posts()): ?>
+		<?php while (have_posts()):
+      the_post(); ?>
+
+			<?php get_template_part('template-parts/content', get_post_format()); ?>
+
 		<?php
-		while ( have_posts() ) :
-			the_post();
-			?>
-
-			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-
-		<?php endwhile; ?>
+  endwhile; ?>
 
 	<?php endif; ?>
 
 </div>
 
-<?php
-get_footer();
+<?php get_footer();

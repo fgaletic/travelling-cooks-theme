@@ -1,5 +1,5 @@
 const theme = require('./theme.json');
-const tailpress = require("@jeffreyvr/tailwindcss-tailpress");
+const tailpress = require('@jeffreyvr/tailwindcss-tailpress');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -8,46 +8,62 @@ module.exports = {
         './**/*.php',
         './resources/css/*.css',
         './resources/js/*.js',
-        './safelist.txt'
+        './safelist.txt',
     ],
     theme: {
         container: {
             padding: {
                 DEFAULT: '1rem',
                 sm: '2rem',
-                lg: '0rem'
+                lg: '0rem',
             },
         },
         extend: {
             colors: {
-                ...tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)), // Keep TailPress colors
-                redOrange: '#D93B00', // Main red-orange for highlights
-                lightWhite: '#FCFCFC', // Light white background
-                darkGray: '#281E1B', // Dark gray for primary text
-                mutedGray: '#6E5349', // Muted gray for secondary elements
+                ...tailpress.colorMapper(
+                    tailpress.theme('settings.color.palette', theme),
+                ), // Keep TailPress colors
+                mutedPink: '#d39e8a', // Soft muted pink
+                darkBrown: '#44312b', // Dark brown for text
+                slateGray: '#73868c', // Slate gray for details
+                offWhite: '#f4f3ed', // Off-white for backgrounds
             },
             fontFamily: {
-                sen: ['Sen', 'sans-serif'], // For headings
-                outfit: ['Outfit', 'sans-serif'], // For navigation
-                domine: ['Domine', 'serif'], // For hero titles
+                recoleta: ['Recoleta', 'serif'], // For titles
+                dmsans: ['DM Sans', 'sans-serif'], // For body text
+                buffalo: ['Buffalo', 'sans-serif'], // For decorative text
             },
             borderRadius: {
-                lg: '8px', // Rounded images and cards
+                lg: '8px', // Keep rounded styling
             },
             fontSize: {
-                ...tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme)) // Keep TailPress font sizes
-            }
+                ...tailpress.fontSizeMapper(
+                    tailpress.theme('settings.typography.fontSizes', theme),
+                ), // Keep TailPress font sizes
+            },
+            animation: {
+                'fade-in': 'fadeIn 0.3s ease-in-out',
+                'fade-out': 'fadeOut 0.3s ease-in-out',
+            },
+            keyframes: {
+                fadeIn: {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                    '0%': { opacity: '1' },
+                    '100%': { opacity: '0' },
+                },
+            },
         },
         screens: {
-            'xs': '480px',
-            'sm': '600px',
-            'md': '700px',
-            'lg': tailpress.theme('settings.layout.contentSize', theme),
-            'xl': tailpress.theme('settings.layout.wideSize', theme),
-            '2xl': '1440px'
-        }
+            xs: '480px',
+            sm: '600px',
+            md: '700px',
+            lg: tailpress.theme('settings.layout.contentSize', theme),
+            xl: tailpress.theme('settings.layout.wideSize', theme),
+            '2xl': '1440px',
+        },
     },
-    plugins: [
-        tailpress.tailwind
-    ]
+    plugins: [tailpress.tailwind],
 };

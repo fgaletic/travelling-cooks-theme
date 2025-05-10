@@ -1,5 +1,21 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-@import "custom.css";
+@import 'custom.css';
+
+@font-face {
+    font-family: 'Recoleta';
+    src: url('../../assets/fonts/Recoleta-RegularDEMO.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Buffalo';
+    src: url('../../assets/fonts/Buffalo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

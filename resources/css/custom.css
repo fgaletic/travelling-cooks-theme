@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&family=Outfit:wght@400;500;700&family=Domine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
-html, body {
+html,
+body {
     max-width: 100%;
     width: 100%;
     overflow-x: hidden;
@@ -8,34 +9,84 @@ html, body {
 
 /* Header Styling */
 header {
-    @apply flex justify-between items-center px-6 py-4;
+    @apply w-full bg-white shadow-md z-50;
 }
 
 header a {
-    @apply flex items-center gap-2;
+    @apply flex items-center gap-2 mb-4 justify-center;
 }
 
 header nav {
-    @apply flex space-x-8 text-lg font-outfit;
+    @apply flex space-x-8 text-lg font-dmsans;
+}
+
+header nav .nav-menu {
+    @apply flex justify-center space-x-8 text-lg font-dmsans w-full;
 }
 
 .header-container {
-    @apply px-6 py-4 w-full h-[10vh]; /* Consolidated styles */
+    @apply flex flex-col items-center justify-center py-6 md:py-8 min-h-[120px] transition-all duration-300;
+  }  
+
+/* Mobile Navigation Styling */
+#mobile-menu {
+    @apply hidden fixed top-0 left-0 w-full h-screen bg-white shadow-md p-6 transition-all duration-300 flex flex-col items-center justify-center;
 }
 
+#mobile-menu.active {
+    @apply block;
+}
+
+/* Make sure the mobile menu button is properly aligned */
+#primary-menu-toggle {
+    @apply text-gray-800 focus:outline-none fixed right-6 z-50;
+}
+
+/* Change icon to "X" when menu is active */
+.menu-open #primary-menu-toggle svg {
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>');
+}
+
+/* Adjust the header layout for mobile */
 @media (max-width: 960px) {
     .header-container {
-        @apply px-4; /* Adjust for smaller screens */
+        @apply flex flex-col items-center px-4 py-4;
+    }
+
+    nav {
+        display: none !important; /* Always hide desktop menu on mobile */
+    }
+
+    #primary-menu-toggle {
+        display: block !important; /* Ensure hamburger menu is always visible */
+    }
+
+    header {
+        @apply fixed top-0 left-0 w-full bg-white shadow-md z-50;
+    }
+
+    header a {
+        @apply mb-0;
+    }
+
+    /* Ensure the body starts below the fixed header */
+    body {
+        padding-top: calc(100px + 1rem);
+    }
+
+    #mobile-menu {
+        @apply fixed top-24 left-0 w-full bg-white shadow-md p-6 z-[100]; /* Higher z-index to ensure it's on top */
     }
 }
 
 /* Typography and Link Styling */
-.entry-content h1, .hero-section h1 {
-    @apply text-2xl font-domine font-bold;
+.entry-content h1,
+.hero-section h1 {
+    @apply text-2xl font-recoleta font-bold;
 }
 
 .entry-content h2 {
-    @apply text-xl font-outfit font-bold;
+    @apply text-xl font-recoleta font-bold;
 }
 
 .entry-content p {
@@ -49,10 +100,35 @@ header nav {
     display: flex;
     align-items: center;
     position: relative;
+    padding-top: 5rem;
+}
+
+/* Intro Section with Background Watermark */
+.intro-with-bg {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.intro-with-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('/wp-content/themes/travelling-cooks-theme/assets/images/travelling-cooks-logo.svg');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2; 
+    z-index: 0;
+}
+
+.intro-with-bg > * {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-section h1 {
-    @apply max-w-full w-full font-domine font-bold text-[72px] md:text-[96px] leading-[78px] md:leading-[96px] tracking-tight text-darkGray;
+    @apply max-w-full w-full font-recoleta font-bold text-[72px] md:text-[96px] leading-[78px] md:leading-[96px] tracking-tight text-darkBrown;
     margin: 0 auto;
     margin-left: 1rem;
     position: relative;
@@ -60,7 +136,7 @@ header nav {
 }
 
 .hero-section p {
-    @apply text-lg sm:text-base font-outfit text-gray-700 opacity-70 mt-4 max-w-[600px];
+    @apply text-lg sm:text-base font-recoleta text-gray-700 opacity-70 mt-4 max-w-[600px];
     margin-left: 1rem;
     position: relative;
     z-index: 10; /* Ensure it is above the image */
@@ -93,28 +169,63 @@ header nav {
 }
 
 .blog-preview article {
-    @apply bg-white rounded-lg shadow-md overflow-hidden p-4;
+    @apply bg-white rounded-sm shadow-md overflow-hidden p-4 transition-all duration-200;
+}
+
+.blog-preview .image-container {
+    @apply w-[320px] h-[320px] rounded-full overflow-hidden shadow-lg mx-auto relative;
 }
 
 .blog-preview img {
-    @apply w-full h-48 object-cover rounded-t-lg;
+    @apply absolute inset-0 w-full h-full object-cover;
 }
 
 .blog-preview article:hover {
-    @apply shadow-lg transform scale-105 transition-all;
+    @apply shadow-lg transform scale-105 transition-all hover:scale-105 transform transition-all duration-200;
+}
+
+.blog-preview article:hover .image-container {
+    @apply transform -translate-y-2;
+}
+
+/* Make sure container is centered on mobile */
+@media (max-width: 640px) {
+    .blog-preview .image-container {
+        @apply w-[280px] h-[280px];
+    }
+}
+
+.destination-chip {
+    @apply flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm 
+           border border-gray-200 hover:bg-offWhite transition-all duration-200
+           text-darkBrown font-dmsans text-lg;
+}
+
+.destination-chip i {
+    @apply text-mutedPink text-2xl;
+}
+
+.destinations .flex {
+    @apply flex-wrap max-w-4xl;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.destinations .flex::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
 }
 
 /* Footer Styling */
 footer {
-    @apply bg-lightWhite py-12;
+    @apply bg-offWhite py-12;
 }
 
 footer a {
-    @apply font-outfit text-gray-600 hover:text-redOrange;
+    @apply font-dmsans text-gray-600 hover:text-mutedPink;
 }
 
 footer h4 {
-    @apply text-lg font-outfit mb-4;
+    @apply text-lg font-dmsans mb-4;
 }
 
 footer form {
@@ -122,9 +233,216 @@ footer form {
 }
 
 footer input {
-    @apply p-3 border border-gray-300 rounded-lg font-outfit focus:outline-none focus:ring-2 focus:ring-orange-300;
+    @apply p-3 border border-gray-300 rounded-lg font-dmsans focus:outline-none focus:ring-2 focus:ring-orange-300;
 }
 
 footer button {
-    @apply bg-redOrange text-white font-outfit py-2 px-4 rounded-lg hover:bg-orange-600;
+    @apply bg-mutedPink text-white font-dmsans py-2 px-4 rounded-lg hover:bg-orange-600;
+}
+
+/* Round images just on front page */
+.home .latest-posts .image-container img {
+    border-radius: 50%; /* Make the image round */
+    width: 400px; /* Adjust to your desired size */
+    height: 400px; /* Should be equal to width for a perfect circle */
+    object-fit: cover; /* Important to maintain aspect ratio */
+}
+
+.home .latest-posts .image-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    margin-bottom: 1rem;
+}
+
+/* Flip Card Styles */
+.flip-card {
+    @apply relative;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    @apply relative w-full h-full;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    @apply absolute w-full h-full rounded-lg;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+/* Safari Fix for Flip Card */
+@media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+        .flip-card-back {
+            transform: rotateY(180deg) translateZ(1px);
+        }
+    }
+}
+
+/* Image handling */
+.aspect-w-3 {
+    position: relative;
+    padding-bottom: 66.666667%; /* 2:3 aspect ratio */
+}
+
+.aspect-w-3 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+img.object-cover {
+    object-fit: cover;
+    font-family: 'object-fit: cover'; /* IE11 fallback */
+}
+
+/* Pagination Styles */
+.navigation.pagination {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation.pagination .nav-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.page-numbers {
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 0.5rem;
+    color: #666;
+    background-color: white;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.page-numbers.current {
+    background-color: #d39e8a; /* mutedPink */
+    color: white;
+}
+
+.page-numbers:hover:not(.current) {
+    background-color: #d39e8a;
+    color: white;
+}
+
+.page-numbers.dots {
+    background: none;
+}
+
+.breadcrumbs a {
+    color: #d16d82; /* Muted pink */
+    text-decoration: none;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+.breadcrumbs span {
+    color: #6b7280; /* Slate gray */
+}
+
+/* Desktop Navigation Hover Effects */
+.nav-menu a {
+    @apply text-darkBrown transition-all duration-200 px-3 py-1 rounded-lg;
+}
+
+.nav-menu a:hover {
+    background-color: #fbeae7; /* Light muted pink background */
+    color: #e4a79d; /* Muted pink text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the chip effect */
+}
+
+/* Mobile Navigation Hover Effects */
+#mobile-menu a {
+    @apply text-darkBrown transition-all duration-200 px-3 py-1 rounded-lg;
+}
+
+#mobile-menu a:hover
+ {
+    background-color: #fbeae7; /* Light muted pink background */
+    color: #e4a79d; /* Muted pink text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the chip effect */
+}
+
+header.scrolled .header-container {
+    @apply flex-row justify-between items-center py-2 min-h-[72px];
+}
+
+header.scrolled .logo-img {
+    @apply w-12 h-12 md:w-20 md:h-20;
+}
+
+header.scrolled .logo-text {
+    @apply text-[40px] md:text-[64px];
+}
+
+header.scrolled a {
+    @apply flex items-center gap-2 mx-2 justify-start;
+}
+
+/* Pin Styling */
+.pin {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #73868c;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.pin:hover .pin-label {
+    opacity: 1;
+    transform: translate(-50%, -120%); /* Move label above the pin */
+}
+
+.pin-label {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #44312b; /* Dark gray background */
+    color: #fff; /* White text */
+    font-size: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    white-space: nowrap;
+    opacity: 0; /* Hidden by default */
+    transition: all 0.2s ease-in-out;
+    pointer-events: none; /* Prevent interaction with the label */
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.pin-label::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 4px;
+    border-style: solid;
+    border-color: #4a4a4a transparent transparent transparent; /* Triangle pointing down */
+    display: block;
 }
