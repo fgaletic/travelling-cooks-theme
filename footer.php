@@ -56,7 +56,7 @@
                 <!-- Fallback Form -->
                 <form class="flex flex-col gap-4">
                     <input type="email" class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300" placeholder="Email address">
-                    <button class="bg-mutedPink text-white py-2 px-4 rounded-lg hover:bg-orange-600">
+                    <button class="bg-mutedPink text-white py-2 px-4 rounded-lg hover:bg-darkBrown">
                         Subscribe
                     </button>
                 </form>
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create the button
     var button = document.createElement('button');
     button.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    button.className = 'back-to-top hidden fixed bottom-4 right-4 bg-mutedPink hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition-all';
+    button.className = 'back-to-top hidden fixed bottom-4 right-4 bg-mutedPink hover:bg-darkBrown text-white p-3 rounded-full shadow-lg transition-all';
     document.body.appendChild(button);
 
     // Show/hide button based on scroll position
