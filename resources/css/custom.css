@@ -402,8 +402,8 @@ header.scrolled a {
 /* Pin Styling */
 .pin {
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 9px;
+    height: 9px;
     background-color: #73868c;
     border-radius: 50%;
     transform: translate(-50%, -50%);
@@ -454,5 +454,11 @@ header.scrolled a {
 
   .fade-in-up.show {
     @apply opacity-100 translate-y-0;
+  }
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 7rem;
   }
 }

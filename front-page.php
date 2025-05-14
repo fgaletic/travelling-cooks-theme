@@ -61,71 +61,75 @@
 
         <!-- Map for larger screens -->
         <div class="hidden sm:block">
-            <div class="map-wrapper relative w-full max-w-[900px] mx-auto">
-                <div class="aspect-[2/1] w-full relative">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TC_Map.png"
-                         alt="World Map"
-                         class="absolute inset-0 w-full h-full object-cover rounded-lg shadow" />
-                    
-                    <!-- PINS GO HERE -->
-                    <a href="/tag/japan" class="pin" style="top: 45%; left: 86%;" title="Japan">
-                        <span class="pin-label">Japan</span>
-                    </a>
-                    <a href="/tag/united-kingdom" class="pin" style="top: 36%; left: 46%;" title="United Kingdom">
-                        <span class="pin-label">UK</span>
-                    </a>
-                    <a href="/tag/belgium" class="pin" style="top: 38%; left: 47%;" title="Belgium">
-                        <span class="pin-label">Belgium</span>
-                    </a>
-                    <a href="/tag/italy" class="pin" style="top: 43%; left: 50%;" title="Italy">
-                        <span class="pin-label">Italy</span>
-                    </a>
-                    <a href="/tag/morocco" class="pin" style="top: 52%; left: 43%;" title="Morocco">
-                        <span class="pin-label">Morocco</span>
-                    </a>
-                </div>
-            </div>
+            <?php get_template_part('template-parts/map-pins'); ?>
         </div>
+    </div>
+    </div>
 
-        <!-- Destination chips for small screens -->
-        <div class="block sm:hidden">
-            <div class="flex justify-center items-center mx-auto gap-3">
-                <?php
-                $destinations = get_option('destination_meta', []);
+    <!-- Destination chips for small screens -->
+    <div class="block sm:hidden px-4 mb-6">
+        <div class="flex flex-wrap justify-center items-center gap-3">
+            <?php
+        $destinations = get_option('destination_meta', []);
 
-                foreach ($destinations as $destination):
-                    $country = esc_html($destination['country']);
-                    $icon = esc_attr($destination['icon']);
+        foreach ($destinations as $destination) {
+            $country = esc_html($destination['country']);
+            $icon = esc_attr($destination['icon']);
 
-                    // Get the tag or create it if it doesn't exist
-                    $tag = get_term_by('name', $country, 'post_tag');
-                    if (!$tag) {
-                        $tag_result = wp_insert_term($country, 'post_tag');
-                        if (!is_wp_error($tag_result)) {
-                            $tag = get_term_by(
-                                'id',
-                                $tag_result['term_id'],
-                                'post_tag'
-                            );
-                        }
-                    }
+            // Match tag *by name*, case-insensitive
+            $tag = get_term_by('name', $country, 'post_tag');
 
-                    // Only show the link if we have a valid tag
-                    if ($tag) {
-                        $tag_link = get_tag_link($tag->term_id); ?>
-                        <a href="<?php echo esc_url(
-                            $tag_link
-                        ); ?>" class="destination-chip">
-                            <i class="<?php echo $icon; ?>"></i>
-                            <span><?php echo $country; ?></span>
-                        </a>
-                    <?php
-                    }
-                endforeach;
-                ?>
-            </div>
+            // Only show the chip if the tag exists and has posts
+            if ($tag && $tag->count > 0) {
+                $tag_link = get_tag_link($tag->term_id);
+                echo "<a href='" . esc_url($tag_link) . "' class='destination-chip bg-offWhite hover:bg-mutedPink text-darkBrown border border-gray-300 px-4 py-2 rounded-full flex items-center gap-2 transition'>
+                        <i class='$icon'></i>
+                        <span>$country</span>
+                      </a>";
+            }
+        }
+        ?>
         </div>
+    </div>
     </div>
 </section>
 
 <?php get_footer(); ?>
+
+<!-- Mobile: Destination Chips -->
+
+<?php
+$continent_countries = [
+  'Asia' => ['japan'],
+  'Europe' => ['belgium', 'denmark', 'france', 'germany', 'italy', 'spain', 'switzerland', 'united-kingdom'],
+  'North America' => ['usa'],
+];
+
+echo '<div class="flex flex-wrap gap-2 text-sm mb-6">';
+
+foreach ($continent_countries as $continent => $country_slugs) {
+    $has_country = false;
+
+    foreach ($country_slugs as $slug) {
+        $term = get_term_by('slug', $slug, 'post_tag');
+        if ($term && $term->count > 0) {
+            $has_country = true;
+            break;
+        }
+    }
+
+    if ($has_country) {
+        echo "<span class='chip bg-slate-200 font-semibold'>$continent</span>";
+
+        foreach ($country_slugs as $slug) {
+            $term = get_term_by('slug', $slug, 'post_tag');
+            if ($term && $term->count > 0) {
+                $link = get_tag_link($term->term_id);
+                echo "<a href='$link' class='chip bg-offWhite hover:bg-mutedPink text-darkBrown border border-gray-300 px-3 py-1 rounded-full transition'>$term->name</a>";
+            }
+        }
+    }
+}
+
+echo '</div>';
+?>

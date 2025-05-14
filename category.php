@@ -15,30 +15,7 @@
         <!-- <h2 class="text-5xl font-recoleta text-center mb-6">Where to next?</h2> -->
 
         <!-- Map for larger screens -->
-            <div class="map-wrapper relative w-full max-w-[900px] mx-auto">
-                <div class="aspect-[2/1] w-full relative">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TC_Map.png"
-                         alt="World Map"
-                         class="absolute inset-0 w-full h-full object-cover rounded-lg shadow" />
-                    
-                    <!-- PINS GO HERE -->
-                    <a href="/tag/japan" class="pin" style="top: 45%; left: 86%;" title="Japan">
-                        <span class="pin-label">Japan</span>
-                    </a>
-                    <a href="/tag/united-kingdom" class="pin" style="top: 36%; left: 46%;" title="United Kingdom">
-                        <span class="pin-label">UK</span>
-                    </a>
-                    <a href="/tag/belgium" class="pin" style="top: 38%; left: 47%;" title="Belgium">
-                        <span class="pin-label">Belgium</span>
-                    </a>
-                    <a href="/tag/italy" class="pin" style="top: 43%; left: 50%;" title="Italy">
-                        <span class="pin-label">Italy</span>
-                    </a>
-                    <a href="/tag/morocco" class="pin" style="top: 52%; left: 43%;" title="Morocco">
-                        <span class="pin-label">Morocco</span>
-                    </a>
-                </div>
-            </div>
+                <?php get_template_part('template-parts/map-pins'); ?>
     </div>
 </section>
 <?php endif; ?>

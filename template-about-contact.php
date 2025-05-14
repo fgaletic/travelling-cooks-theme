@@ -15,6 +15,8 @@ get_header(); ?>
         </div>
         <div class="bg-offWhite p-8 rounded-lg shadow-md">
             <h2 class="text-2xl font-recoleta text-darkBrown mb-4">Send a Message</h2>
+            <!-- Replace the Formspree endpoint below with your own Formspree form ID! -->
+            <!-- See https://formspree.io/ for instructions. -->
             <form id="contactForm" method="POST" action="javascript:void(0);" class="space-y-4">
                 <!-- 🛡️ Honeypot field -->
                 <input type="text" name="_gotcha" class="hidden" style="display:none">
@@ -68,21 +70,30 @@ get_header(); ?>
                             successMsg.classList.remove("hidden");
                             successMsg.classList.add("fade-in-up", "show");
                             form.reset();
-                            successMsg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            successMsg.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
                         } else {
                             successMsg.textContent =
                                 "Oops! Something went wrong. Please try again later.";
                             successMsg.classList.remove("hidden");
                             successMsg.classList.replace("text-green-600", "text-red-600");
                             successMsg.classList.replace("bg-green-100", "bg-red-100");
-                            successMsg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            successMsg.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
                         }
                     } catch (err) {
                         successMsg.textContent = "Network error. Please try again later.";
                         successMsg.classList.remove("hidden");
                         successMsg.classList.replace("text-green-600", "text-red-600");
                         successMsg.classList.replace("bg-green-100", "bg-red-100");
-                        successMsg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        successMsg.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
                     }
                 });
             });
