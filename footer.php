@@ -116,7 +116,7 @@
 
 <!-- Bottom Footer Bar -->
 <div class="bg-gray-50 py-2 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-4 gap-x-8 items-start">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 items-start">
         <div class="text-center sm:text-left text-xs text-gray-500">
             &copy; <?php echo date('Y'); ?> Travelling Cooks. All rights reserved.
             <span class="block text-[10px] text-gray-400 mt-1">
