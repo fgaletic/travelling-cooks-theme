@@ -21,7 +21,7 @@
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h2>
                     <p class="text-slateGray font-dmsans mb-4"><?php echo get_the_excerpt(); ?></p>
-                    <a href="<?php the_permalink(); ?>" class="inline-block bg-mutedPink text-white font-dmsans py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors">Read More</a>
+                    <a href="<?php the_permalink(); ?>" class="inline-block bg-mutedPink text-white font-dmsans py-2 px-4 rounded-lg hover:bg-darkBrown transition-colors">Read More</a>
                 </div>
             </article>
         <?php

@@ -1,9 +1,9 @@
 <footer class="bg-offWhite py-12">
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Logo & Social Links -->
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 items-center sm:items-start text-center sm:text-left">
         <a href="<?php echo home_url(); ?>" class="flex items-center gap-2 -mx-2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/travelling-cooks-logo.svg'" alt="Footer Logo" class="w-10 h-10">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/travelling-cooks-logo.svg" alt="Footer Logo" class="w-10 h-10">
                 <span class="-ml-2 text-2xl font-bold font-buffalo text-mutedPink">Travelling Cooks</span>
             </a>
             <div class="flex gap-4">
@@ -44,31 +44,71 @@
         <div>
             <h4 class="text-lg font-bold font-recoleta mb-4">Newsletter</h4>
             <p class="text-sm text-dmsans text-gray-600 mb-4">Stay updated with our latest travel and cooking adventures.</p>
+            <form id="newsletterForm" method="POST" action="javascript:void(0);" class="flex flex-col gap-4">
+                <!-- 🛡️ Honeypot field -->
+                <input type="text" name="_gotcha" class="hidden" style="display:none">
+                <div id="newsletterSuccess" class="hidden text-green-600 font-dmsans p-2 pr-8 bg-green-100 rounded-lg shadow-sm relative flex items-center min-h-[44px]">
+                    <span id="newsletterSuccessMsg" class="flex-1"></span>
+                    <button type="button" id="newsletterSuccessClose"
+                        class="absolute right-2 top-1/2 -translate-y-1/2 text-lg leading-none text-gray-400 hover:text-gray-700 px-1"
+                        aria-label="Close">&times;</button>
+                </div>
+                <input type="email" name="email" required class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300" placeholder="Email address">
+                <button type="submit" class="bg-mutedPink text-white py-2 px-4 rounded-lg hover:bg-darkBrown">
+                    Subscribe
+                </button>
+            </form>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const form = document.getElementById("newsletterForm");
+                const successBox = document.getElementById("newsletterSuccess");
+                const successMsg = document.getElementById("newsletterSuccessMsg");
+                const closeBtn = document.getElementById("newsletterSuccessClose");
 
-            <?php if (class_exists('GFForms')): ?>
-                <!-- Gravity Forms Integration -->
-                <?php 
-                // To use Gravity Forms, uncomment the line below and replace "1" with your Gravity Form ID.
-                // echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]'); 
-                ?>
-                <p class="text-sm text-gray-500 italic">Gravity Forms is active. Add your form shortcode above.</p>
-            <?php else: ?>
-                <!-- Fallback Form -->
-                <form class="flex flex-col gap-4">
-                    <input type="email" class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300" placeholder="Email address">
-                    <button class="bg-mutedPink text-white py-2 px-4 rounded-lg hover:bg-orange-600">
-                        Subscribe
-                    </button>
-                </form>
-                <!-- <p class="text-sm text-gray-500 italic">Gravity Forms is not active. Using fallback form.</p> -->
-            <?php endif; ?>
+                form.addEventListener("submit", async function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(form);
+
+                    try {
+                        // Replace the Formspree endpoint below with your own Formspree form ID!
+                        // See https://formspree.io/ for instructions.
+                        const res = await fetch("https://formspree.io/f/xwpoapnw", {
+                            method: "POST",
+                            body: formData,
+                            headers: { Accept: "application/json" }
+                        });
+
+                        if (res.ok) {
+                            successMsg.textContent = "Thanks for subscribing!";
+                            successBox.classList.remove("hidden");
+                            successBox.classList.add("fade-in-up", "show");
+                            form.reset();
+                        } else {
+                            successMsg.textContent = "Oops! Something went wrong. Please try again.";
+                            successBox.classList.remove("hidden");
+                            successBox.classList.replace("text-green-600", "text-red-600");
+                            successBox.classList.replace("bg-green-100", "bg-red-100");
+                        }
+                    } catch (err) {
+                        successMsg.textContent = "Network error. Please try again later.";
+                        successBox.classList.remove("hidden");
+                        successBox.classList.replace("text-green-600", "text-red-600");
+                        successBox.classList.replace("bg-green-100", "bg-red-100");
+                    }
+                });
+
+                closeBtn.addEventListener("click", function() {
+                    successBox.classList.add("hidden");
+                });
+            });
+            </script>
         </div>
     </div>
 </footer>
 
 <!-- Bottom Footer Bar -->
 <div class="bg-gray-100 py-4">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-600">
+<div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8 items-start">
         <div>
             &copy; <?php echo date(
                 'Y'
@@ -86,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create the button
     var button = document.createElement('button');
     button.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    button.className = 'back-to-top hidden fixed bottom-4 right-4 bg-mutedPink hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition-all';
+    button.className = 'back-to-top hidden fixed bottom-4 right-4 bg-mutedPink hover:bg-darkBrown text-white p-3 rounded-full shadow-lg transition-all';
     document.body.appendChild(button);
 
     // Show/hide button based on scroll position

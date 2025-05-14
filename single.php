@@ -69,7 +69,8 @@
         <?php if (has_post_thumbnail()): ?>
         <div class="mb-8">
             <?php the_post_thumbnail('landscape', [
-                'class' => 'w-full h-auto rounded-lg',
+                'class' => 'w-full h-80 md:h-96 rounded-lg object-cover',
+                'style' => 'object-position: center;'
             ]); ?>
         </div>
         <?php endif; ?>
