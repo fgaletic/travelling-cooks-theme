@@ -109,8 +109,8 @@ get_header(); ?>
                     ); ?>" alt="<?php the_title(); ?>" class="w-full h-auto object-cover">
             <?php endif; ?>
         </div>
-        <div class="prose prose-lg max-w-none font-dmsans text-darkBrown leading-relaxed self-start">
-            <h1 class="text-4xl font-recoleta text-darkBrown mb-4 text-left">About Us</h1>
+        <div class="bg-offWhite rounded-lg shadow-md p-8 flex flex-col text-darkBrown md:flex-row items-center gap-8">
+                <h1 class="text-4xl font-recoleta mb-4 text-left">About Us</h1>
             <?php the_content(); ?>
         </div>
         <?php endif; ?>
