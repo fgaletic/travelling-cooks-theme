@@ -69,11 +69,6 @@ header nav .nav-menu {
         @apply mb-0;
     }
 
-    /* Ensure the body starts below the fixed header */
-    body {
-        padding-top: calc(100px + 1rem);
-    }
-
     #mobile-menu {
         @apply fixed top-24 left-0 w-full bg-white shadow-md p-6 z-[100]; /* Higher z-index to ensure it's on top */
     }

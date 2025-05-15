@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="container mx-auto px-4 py-20">
+<main class="container mx-auto px-4 py-8>
     <h1 class="text-4xl font-recoleta text-darkBrown mb-8">
         <?php if (is_category()) {
             single_cat_title();
