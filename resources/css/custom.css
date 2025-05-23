@@ -457,3 +457,32 @@ header.scrolled a {
     scroll-padding-top: 7rem;
   }
 }
+
+/* Add this at the end of your file, before any @layer directives */
+
+/* Comprehensive paragraph spacing fix */
+.prose p, 
+.entry-content p, 
+article p,
+p[dir="auto"],
+.wp-block-paragraph {
+    @apply mb-6;
+}
+
+/* Last paragraphs in containers */
+.prose p:last-child, 
+.entry-content p:last-child, 
+article p:last-child,
+.wp-block-paragraph:last-child {
+    @apply mb-0;
+}
+
+/* Fix spacing around figures/images */
+figure {
+    @apply my-6;
+}
+
+/* Additional spacing between image groups */
+figure + figure {
+    @apply mt-0;
+}

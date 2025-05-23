@@ -26,6 +26,7 @@
         $query = new WP_Query([
             'post_type' => 'post',
             'posts_per_page' => 3,
+            'tag' => 'featured',
         ]);
         if ($query->have_posts()):
             while ($query->have_posts()):
